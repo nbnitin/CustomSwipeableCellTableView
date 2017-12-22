@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<!-- saved from url=(0208)https://forums.raywenderlich.com/embed/comments?embed_url=https%3A%2F%2Fwww.raywenderlich.com%2F62435%2Fmake-swipeable-table-view-cell-actions-without-going-nuts-scroll-views&discourse_username=designatednerd -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+    <link href="./embed_ab052b7c5624b6c4e7db23907ef5b8c1b528da0f.css" media="all" rel="stylesheet" data-target="embed">
+      <link href="./embedded_theme_9_4e945204e8f98f05f17b36b64b3c646cc88e1b4f.css" media="all" rel="stylesheet" data-target="embedded_theme">
+    <link rel="preload" href="./break_string-cc617154cd957804f2f6a1f3bc68258c9cdca3d4b9a322bf777d145fed04790e.js" as="script">
+<script src="./break_string-cc617154cd957804f2f6a1f3bc68258c9cdca3d4b9a322bf777d145fed04790e.js"></script>
+
+      <title>How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views - Official Tutorials - RWForums</title>
+
+    <script>
+      (function() {
+
+        function postUp(msg) {
+          if (parent) {
+            parent.postMessage(msg, 'https://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views');
+          }
+        }
+
+        function clickPostLink(e) {
+          var postId = e.target.getAttribute('data-link-to-post');
+          if (postId) {
+            var postElement = document.getElementById('post-' + postId);
+            if (postElement) {
+              var rect = postElement.getBoundingClientRect();
+              if (rect && rect.top) {
+                postUp({type: 'discourse-scroll', top: rect.top});
+                e.preventDefault();
+                return false;
+              }
+            }
+          }
+        }
+
+        window.onload = function() {
+          // Send a post message with our loaded height
+          postUp({type: 'discourse-resize', height: document['body'].offsetHeight});
+
+          var postLinks = document.querySelectorAll("a[data-link-to-post]"),
+              i;
+
+          for (i=0; i<postLinks.length; i++) {
+            postLinks[i].onclick = clickPostLink;
+          }
+
+          // Make sure all links in the iframe point to _blank
+          var cookedLinks = document.querySelectorAll('.cooked a');
+          for (i=0; i<cookedLinks.length; i++) {
+            cookedLinks[i].target = "_blank";
+          }
+
+          // Adjust all names
+          var names = document.querySelectorAll('.username a');
+          for (i=0; i<names.length; i++) {
+            var username = names[i].innerHTML;
+            if (username) {
+              names[i].innerHTML = new BreakString(username).break();
+            }
+          }
+
+        };
+
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="discourse">
+    <a class="button" target="_blank" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/2">Continue Discussion</a>
+  <span class="replies">17 replies</span>
+</header>
+
+    <article class="post" id="post-13788">
+      <a title="April  5, 2016  6:28pm" class="post-date" target="_blank" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/2">Apr '16</a>
+
+      <div class="author">
+        <a href="https://forums.raywenderlich.com/u/dagna" target="_blank"><img src="./21825_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://forums.raywenderlich.com/u/dagna" target="_blank" class="new-user">dagna</a>
+        </h3>
+        <p>Hi!<br>Are you planning on rewriting this tutorial for Swift? I'm using it at the moment as a base for my Swift project, and I'd love to help!<br>Dagna</p>
+
+      </div>
+    </article>
+    <article class="post" id="post-14068">
+      <a title="April  6, 2016  3:25pm" class="post-date" target="_blank" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/3">Apr '16</a>
+
+      <div class="author">
+        <a href="https://forums.raywenderlich.com/u/designatednerd" target="_blank"><img src="./69914_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://forums.raywenderlich.com/u/designatednerd" target="_blank" class="">designatednerd</a>
+        </h3>
+        <p>Hey <a class="mention" href="https://forums.raywenderlich.com/users/dagna" target="_blank">@dagna</a>, I don't believe it's in the plans at the moment, but I'll definitely mention to the team that there's interest! </p>
+
+<p>There's a few things which have changed since this was written beyond the introduction of Swift as well - <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewRowAction_class/" rel="nofollow" target="_blank">UITableViewRowAction</a> should help a ton if you're just looking to add reasonably simple swipe-under buttons.</p>
+
+      </div>
+    </article>
+    <article class="post" id="post-15598">
+      <a title="April 20, 2016 10:57am" class="post-date" target="_blank" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/4">Apr '16</a>
+
+      <div class="author">
+        <a href="https://forums.raywenderlich.com/u/solomiya" target="_blank"><img src="./30966_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://forums.raywenderlich.com/u/solomiya" target="_blank" class="new-user">solomiya</a>
+        </h3>
+        <p>Is there a reason why one should use this approach after we have got <a href="https://developer.apple.com/library/ios/documentation/UIKit/Reference/UITableViewRowAction_class/" rel="nofollow" target="_blank">UITableViewRowAction</a> available?</p>
+
+            <a data-link-to-post="15611" class="post-replies button" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/4" target="_blank">1 reply</a>
+      </div>
+    </article>
+    <article class="post" id="post-15611">
+      <a title="April 20, 2016  6:07pm" class="post-date" target="_blank" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/5">Apr '16</a>
+        <a data-link-to-post="15598" class="in-reply-to" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/4">▶ solomiya</a>
+
+      <div class="author">
+        <a href="https://forums.raywenderlich.com/u/designatednerd" target="_blank"><img src="./69914_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://forums.raywenderlich.com/u/designatednerd" target="_blank" class="">designatednerd</a>
+        </h3>
+        <p>The main reason would be wanting to use something more customizable than <code>UITableViewRowAction</code> allows for. </p>
+
+<p>As of right now, you can change the background color and the title of a row action, and add a background effect, but that's about it. No images, no font changes, no ability to do what the mail app does and allow swiping all the way off to one side to delete/archive. </p>
+
+<p>There are certainly existing libraries which help with those things, but this tutorial is about making it work if you want to do it yourself. Hope that helps!</p>
+
+            <a data-link-to-post="15625" class="post-replies button" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/5" target="_blank">1 reply</a>
+      </div>
+    </article>
+    <article class="post" id="post-15625">
+      <a title="April 20, 2016  8:49pm" class="post-date" target="_blank" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/6">Apr '16</a>
+        <a data-link-to-post="15611" class="in-reply-to" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/5">▶ designatednerd</a>
+
+      <div class="author">
+        <a href="https://forums.raywenderlich.com/u/solomiya" target="_blank"><img src="./30966_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://forums.raywenderlich.com/u/solomiya" target="_blank" class="new-user">solomiya</a>
+        </h3>
+        <p>Thanks for your response! Since my app is currently at the initial stage, I'll go with default <code>UITableViewRowAction</code> for now <img src="./slight_smile.png" title=":slight_smile:" class="emoji" alt=":slight_smile:"></p>
+
+      </div>
+    </article>
+    <article class="post" id="post-20366">
+      <a title="June 24, 2016  8:30am" class="post-date" target="_blank" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/7">Jun '16</a>
+
+      <div class="author">
+        <a href="https://forums.raywenderlich.com/u/divijay" target="_blank"><img src="./35273_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://forums.raywenderlich.com/u/divijay" target="_blank" class="new-user">divijay</a>
+        </h3>
+        <p>Hi, I am unable see <strong>UITableViewCellScrollView</strong> in iOS 9 table view cell hierarchy ! Can you suggest how to implement it in iOS 9 ? Thanks!</p>
+
+            <a data-link-to-post="21078" class="post-replies button" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/7" target="_blank">1 reply</a>
+      </div>
+    </article>
+    <article class="post" id="post-21078">
+      <a title="July  3, 2016 11:50pm" class="post-date" target="_blank" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/8">Jul '16</a>
+        <a data-link-to-post="20366" class="in-reply-to" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/7">▶ divijay</a>
+
+      <div class="author">
+        <a href="https://forums.raywenderlich.com/u/designatednerd" target="_blank"><img src="./69914_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://forums.raywenderlich.com/u/designatednerd" target="_blank" class="">designatednerd</a>
+        </h3>
+        <p>Unfortunately I haven't had too much of a chance to look at how the cell hierarchy in iOS 9 has changed, but I would advise using the view debugger in Xcode to take a look at what the various Views within the cell are nowadays. </p>
+
+<p>The biggest thing is making sure that you're adding the content you want to be under your main cell to the cell's <code>contentView</code>, since otherwise it won't actually be visible to the user.</p>
+
+      </div>
+    </article>
+    <article class="post" id="post-30586">
+      <a title="November 10, 2016  9:27am" class="post-date" target="_blank" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/9">Nov '16</a>
+
+      <div class="author">
+        <a href="https://forums.raywenderlich.com/u/anishparajuli" target="_blank"><img src="./42744_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://forums.raywenderlich.com/u/anishparajuli" target="_blank" class="new-user">anishparajuli</a>
+        </h3>
+        <p><a class="mention" href="https://forums.raywenderlich.com/users/designatednerd" target="_blank">@designatednerd</a>  i want to implement the swipe functionality from left to right..Putting the swipe view towards the Left of the cell...But cant figure out this mathematics..Can you help?</p>
+
+            <a data-link-to-post="30613" class="post-replies button" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/9" target="_blank">1 reply</a>
+      </div>
+    </article>
+    <article class="post" id="post-30613">
+      <a title="November 10, 2016  4:28pm" class="post-date" target="_blank" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/10">Nov '16</a>
+        <a data-link-to-post="30586" class="in-reply-to" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/9">▶ anishparajuli</a>
+
+      <div class="author">
+        <a href="https://forums.raywenderlich.com/u/designatednerd" target="_blank"><img src="./69914_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://forums.raywenderlich.com/u/designatednerd" target="_blank" class="">designatednerd</a>
+        </h3>
+        <p>In theory you should be able to flip what's assigned to the left constraint and right constraint and have it work relatively well - you may have to do some flipping of what's positive vs. negative in the gesture recognizer handler in order for the math to work correctly, but the general theory should be the same. </p>
+
+<p>I will note that this tutorial hasn't been updated in a couple years though, so I have no idea how well it runs on iOS 10.</p>
+
+      </div>
+    </article>
+    <article class="post" id="post-42174">
+      <a title="May  8, 2017  1:18pm" class="post-date" target="_blank" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/11"> 8 May</a>
+
+      <div class="author">
+        <a href="https://forums.raywenderlich.com/u/objetivecesar" target="_blank"><img src="./66287_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://forums.raywenderlich.com/u/objetivecesar" target="_blank" class="new-user">objetivecesar</a>
+        </h3>
+        <p><a class="mention" href="https://forums.raywenderlich.com/u/designatednerd" target="_blank">@designatednerd</a>, thanks for the great tutorial.<br>I used it as a bases for three action buttons inside a table view cell in swift 3 and with some minor changes regarding the "point of no return" calculation.<br>As far as iOS 10 compatibility goes, you did an awesome job. Works perfectly on my end.</p>
+
+      </div>
+    </article>
+    <article class="post" id="post-46047">
+      <a title="June 28, 2017 12:19pm" class="post-date" target="_blank" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/12">28 Jun</a>
+
+      <div class="author">
+        <a href="https://forums.raywenderlich.com/u/balko" target="_blank"><img src="./71257_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://forums.raywenderlich.com/u/balko" target="_blank" class="new-user">balko</a>
+        </h3>
+        <p>Thanks for the tutorial, I am using the same system too. The difference for me is that I don't have buttons, I have actions that occur based on how far you pull. Here is my challenge though. My table view has complex data, different sections have different data and therefore different actions. Implementing which actions should show and what should the actions do doesn't really have any place in the code. Looking at it logically though, <code>UITableViewDataSource</code> and <code>UITableViewDelegate</code> are the ones that should be called to implement this behaviour.</p>
+
+<p>When a user starts swiping, the cell should call <code>UITableViewDataSource</code> with something like <code>actionForSwipe(swipe: Swipe) -&gt; Action</code>, where the action struct has the title, colour and other stuff that can be displayed. Once a swipe is complete, the delegate should be called, probably something like <code>tableView(_ tableView: UITableView, didSwipeRowAt indexPath: IndexPath withSwipe swipe: Swipe)</code>.</p>
+
+<p>My question is: Is it possible in Swift 3 or 4 to extend <code>UITableViewDataSource</code> and <code>UITableViewDelegate</code> with these custom functions so that I don't need to know the class, I just need to know it conforms to the protocols? Or perhaps, I could create a new protocol that inherits from the table view protocols and includes custom functions, but then is it possible to subclass uitableview and change the type of dataSource and delegate variables from <code>UITableViewDataSource</code> and <code>UITableViewDelegate</code> to some custom <code>SwipeableTableViewDataSource</code> and <code>SwipeableTableViewDelegate</code>?</p>
+
+<p>Thanks</p>
+
+<p>(I asked this on stackoverflow too, but apparently no one can answer <img src="./confused.png" title=":confused:" class="emoji" alt=":confused:"> <a href="https://stackoverflow.com/questions/44715914/subclass-uitableview-to-add-functionality-extend-delegate-and-datasource" rel="nofollow noopener" target="_blank">https://stackoverflow.com/questions/44715914/subclass-uitableview-to-add-functionality-extend-delegate-and-datasource</a>)</p>
+
+            <a data-link-to-post="46359" class="post-replies button" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/12" target="_blank">1 reply</a>
+      </div>
+    </article>
+    <article class="post" id="post-46359">
+      <a title="July  3, 2017  2:35pm" class="post-date" target="_blank" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/13"> 3 Jul</a>
+        <a data-link-to-post="46047" class="in-reply-to" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/12">▶ balko</a>
+
+      <div class="author">
+        <a href="https://forums.raywenderlich.com/u/designatednerd" target="_blank"><img src="./69914_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://forums.raywenderlich.com/u/designatednerd" target="_blank" class="">designatednerd</a>
+        </h3>
+        <p>You can probably use protocol oriented programming to make this work - you can create a protocol and then add a default implementation for <code>Self: UITableViewDataSource</code> or whatever, then use it as a mix-in for whatever you're using that actually implements the data source. You'd probably still have to do some set-up though.</p>
+
+            <a data-link-to-post="46363" class="post-replies button" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/13" target="_blank">1 reply</a>
+      </div>
+    </article>
+    <article class="post" id="post-46363">
+      <a title="July  3, 2017  3:09pm" class="post-date" target="_blank" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/14"> 3 Jul</a>
+        <a data-link-to-post="46359" class="in-reply-to" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/13">▶ designatednerd</a>
+
+      <div class="author">
+        <a href="https://forums.raywenderlich.com/u/balko" target="_blank"><img src="./71257_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://forums.raywenderlich.com/u/balko" target="_blank" class="new-user">balko</a>
+        </h3>
+        <p>Thanks designatednerd, I have actually tried that, there is just the problem that I have to change the type of a delegate on UITableView. The idea was to do a </p>
+
+<pre><code>protocol SwipeableTableViewDataSource: UITableViewDataSource {
+     func tableView(_ tableView: UITableView, didSwipeRowAt indexPath: IndexPath withSwipe swipe: Swipe)
+}</code></pre>
+
+<p>There problem, however, is that I need to make the delegate conform to this. The point is that when a cell is about to swipe, it can call onto the dataSource through its reference to its parent tableView without knowing about the data source itself. So I would need to subclass <code>UITableView</code> and redefine dataSource property as being of <code>SwipeableTableViewDataSource</code> rather than its original <code>UITableViewDataSource</code>. Unfortunately, unless I'm missing something, I can't change the type of a property, even if the new type inherits from the original type.</p>
+
+      </div>
+    </article>
+    <article class="post" id="post-47085">
+      <a title="July 11, 2017  4:33pm" class="post-date" target="_blank" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/15">11 Jul</a>
+
+      <div class="author">
+        <a href="https://forums.raywenderlich.com/u/krmar" target="_blank"><img src="./68963_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://forums.raywenderlich.com/u/krmar" target="_blank" class="new-user">krmar</a>
+        </h3>
+        <p>Hi, thanks for this great tutorial!<br>I have only one question - what's the best way to make this accessible? <br>Using this approach we ended up having the UpperContentView and bellow it two buttons. The VoiceOver detects my two buttons bellow the content view, but when I try double tapping on them, it just performs cell action (which is expected, since the buttons are not visible).<br>It seems like I should make the "area for cell action" smaller when the VoiceOver is on, but I'm not sure how to do it.<br>So, any help would be very appreciated <img src="./smiley.png" title=":smiley:" class="emoji" alt=":smiley:"></p>
+
+            <a data-link-to-post="47377" class="post-replies button" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/15" target="_blank">1 reply</a>
+      </div>
+    </article>
+    <article class="post" id="post-47372">
+      <a title="July 16, 2017  7:36pm" class="post-date" target="_blank" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/16">16 Jul</a>
+
+      <div class="author">
+        <a href="https://forums.raywenderlich.com/u/designatednerd" target="_blank"><img src="./69914_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://forums.raywenderlich.com/u/designatednerd" target="_blank" class="">designatednerd</a>
+        </h3>
+        <p>Ooh, great question. In the visual hierarchy, the top view of the cell moves over, then taps go straight onto the UIButtons added in the view below them. Theoretically since the buttons you're adding are standard UIButtons, they should only require a single tap and should be intercepting any taps that come through. I'll be honest though, I've got no idea how that works in practice with VoiceOver. </p>
+
+<p>I would look at how VoiceOver normally handles swipe to delete functionality. Since there's a certain level of precision that's expected when using the visual interface, maybe there's some other method of showing what portion of the screen needs to be tapped for the actions. </p>
+
+<p>The biggest piece of advice for better VoiceOver support I'd give is to use the new APIs that support this natively rather than faffing around with all this. This tutorial is from quite a while ago, so there's a lot more of this functionality available directly from the system, which includes niceties like VoiceOver support.</p>
+
+      </div>
+    </article>
+    <article class="post" id="post-47377">
+      <a title="July 16, 2017  9:35pm" class="post-date" target="_blank" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/17">16 Jul</a>
+        <a data-link-to-post="47085" class="in-reply-to" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/15">▶ krmar</a>
+
+      <div class="author">
+        <a href="https://forums.raywenderlich.com/u/liamnichols" target="_blank"><img src="./69628_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://forums.raywenderlich.com/u/liamnichols" target="_blank" class="staff">liamnichols</a>
+        </h3>
+        <p><a class="mention" href="https://forums.raywenderlich.com/u/krmar" target="_blank">@krmar</a>, <a class="mention" href="https://forums.raywenderlich.com/u/designatednerd" target="_blank">@designatednerd</a>: Usual practice when making elements compatible with Voice Over and other assistive technologies is that each element has a single responsibility. In this case, the cell's tap action should be the only responsibility of the cell as its the only exposed action (the other buttons are hidden until the user swipes).  </p>
+
+<p>You could look to making this accessible by setting the cell's accessibility trait to none and messing around passing scroll events through so that the user can reveal the content however this won't make it any easier for somebody using the assistive technologies.  </p>
+
+<p>A better way to handle this in your application would be to think of these actions as shortcuts or quick actions for a more experienced user of your app but to always provide a clear way for a less familiar user to perform the same actions. The Mail app is a perfect example of this because all the actions that can be performed using this method can also be performed when the user taps on the cell and views the email (they're all clearly visible in the toolbar).  </p>
+
+<p>Apple have some great sessions on accessibility from both this year and previous events and I recommend checking them out if you are looking to improve the experience when using your app with the assistive technologies <img src="./slightly_smiling_face.png" title=":slightly_smiling_face:" class="emoji" alt=":slightly_smiling_face:"> </p>
+
+<p>Also because this tutorial is over 6 months old now, I'm going to close further discussion until it's updated. In the meantime feel free to open any more specific questions in the relevant areas of the forums. Thanks <img src="./+1.png" title=":+1:" class="emoji" alt=":+1:"></p>
+
+      </div>
+    </article>
+    <article class="post" id="post-47378">
+      <a title="July 16, 2017  9:35pm" class="post-date" target="_blank" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/18">16 Jul</a>
+
+      <div class="author">
+        <a href="https://forums.raywenderlich.com/u/liamnichols" target="_blank"><img src="./69628_1.png" alt=""></a>
+      </div>
+      <div class="cooked">
+        <h3 class="username">
+          <a href="https://forums.raywenderlich.com/u/liamnichols" target="_blank" class="staff">liamnichols</a>
+        </h3>
+        
+
+      </div>
+    </article>
+
+    <footer class="clearfix">
+      <a target="_blank" href="https://forums.raywenderlich.com/"><img class="logo" src="./d0342684bc0d4ca22fe893a3af6083387ed8f474.png" alt="D0342684bc0d4ca22fe893a3af6083387ed8f474"></a>
+      <a class="button" target="_blank" href="https://forums.raywenderlich.com/t/how-to-make-a-swipeable-table-view-cell-with-actions-without-going-nuts-with-scroll-views/6281/18">Continue Discussion</a>
+    </footer>
+    <div class="clearfix"></div>
+
+
+  
+
+</body></html>

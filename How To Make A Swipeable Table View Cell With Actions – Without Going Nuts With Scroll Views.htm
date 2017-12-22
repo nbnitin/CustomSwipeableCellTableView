@@ -1,0 +1,1591 @@
+<!DOCTYPE html>
+<!-- saved from url=(0106)https://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views -->
+<html lang="en-US" class="chrome"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Google Tag Manager -->
+    <script type="text/javascript" async="" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/cc.js"></script><script type="text/javascript" async="" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/itunes_autolinkmaker.js"></script><script type="text/javascript" async="" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/analytics.js"></script><script async="" type="text/javascript" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/gpt.js"></script><script type="text/javascript" async="" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/cse.js"></script><script id="facebook-jssdk" async="" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/all.js"></script><script async="" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/gtm.js"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-PT3PDSN');</script>
+    <!-- End Google Tag Manager -->
+
+    <script type="text/javascript" lang="en">var rootTag = document.getElementsByTagName("html");var classes = rootTag[0].className;rootTag[0].className = classes.replace("no-js","");if (navigator.appVersion.indexOf("Win")==-1) { classes = rootTag[0].className;rootTag[0].className = classes.replace("windows","") } </script>
+    
+    <meta property="fb:app_id" content="118196468516511">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views</title>  
+        <meta name="twitter:card" content="photo">
+        <meta name="twitter:site" content="@rwenderlich">
+        <meta name="twitter:title" content="How To Make A Swipeable Table View Cell With Actions - Without Going Nuts With Scroll Views - Ray Wenderlich">
+        <meta name="twitter:description" content="So you want to make a swipeable table view cell like in Mail.app? This tutorial shows you how without getting bogged down in nested scroll views.">
+        <meta name="twitter:url" content="https://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views">
+          
+        <meta property="og:title" content="How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views">
+        <meta property="og:type" content="article">
+        <meta property="og:site_name" content="Ray Wenderlich">
+        <meta property="og:url" content="https://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views">
+        <meta property="og:description" content="So you want to make a swipeable table view cell like in Mail.app? This tutorial shows you how without getting bogged down in nested scroll views.">
+
+                  <meta name="twitter:image" content="">
+          <meta property="og:image" content="">
+        
+<!-- This site is optimized with the Yoast SEO plugin v5.9.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="So you want to make a swipeable table view cell like in Mail.app? This tutorial shows you how without getting bogged down in nested scroll views.">
+<link rel="canonical" href="https://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views">
+<script type="application/ld+json">{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"https:\/\/www.raywenderlich.com\/","name":"Ray Wenderlich","potentialAction":{"@type":"SearchAction","target":"https:\/\/www.raywenderlich.com\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="https://platform.twitter.com/">
+<link rel="dns-prefetch" href="https://s.w.org/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.raywenderlich.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.1"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56794,8205,9794,65039],[55358,56794,8203,9794,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/wp-emoji-release.min.js" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="style-main-css" href="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="highlight.js-css" href="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/highlight.js.atom-one-light.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="swiftype-css" href="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/autocomplete.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-pagenavi-css" href="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/pagenavi-css.css" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var swiftypeParams = {"engineKey":"omdTFN4ka9Dq1GBywQZq"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/install_swiftype.min.js"></script>
+<script type="text/javascript" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/jquery.js"></script>
+<script type="text/javascript" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/jquery-migrate.min.js"></script>
+<script type="text/javascript" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/global_combined.1.0.16.js"></script><script type="text/javascript" async="" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/a.min.js"></script>
+<script type="text/javascript" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/easy-spoiler.js"></script>
+<link rel="https://api.w.org/" href="https://www.raywenderlich.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.raywenderlich.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://koenig-assets.raywenderlich.com/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 4.9.1">
+<link rel="shortlink" href="https://www.raywenderlich.com/?p=62435">
+<link rel="alternate" type="application/json+oembed" href="https://www.raywenderlich.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.raywenderlich.com%2F62435%2Fmake-swipeable-table-view-cell-actions-without-going-nuts-scroll-views">
+<link rel="alternate" type="text/xml+oembed" href="https://www.raywenderlich.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.raywenderlich.com%2F62435%2Fmake-swipeable-table-view-cell-actions-without-going-nuts-scroll-views&amp;format=xml">
+<link type="text/css" rel="stylesheet" href="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/easy-spoiler.css"><script type="text/javascript"><!--
+function powerpress_pinw(pinw_url){window.open(pinw_url, 'PowerPressPlayer','toolbar=0,status=0,resizable=1,width=460,height=320');	return false;}
+//-->
+</script>
+      <meta name="onesignal" content="wordpress-plugin">
+          <link rel="manifest" href="https://www.raywenderlich.com/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/manifest.json.php?gcm_sender_id=">
+          <script src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/OneSignalSDK.js" async=""></script>    <script>
+
+      window.OneSignal = window.OneSignal || [];
+
+      OneSignal.push( function() {
+        OneSignal.SERVICE_WORKER_UPDATER_PATH = "OneSignalSDKUpdaterWorker.js.php";
+        OneSignal.SERVICE_WORKER_PATH = "OneSignalSDKWorker.js.php";
+        OneSignal.SERVICE_WORKER_PARAM = { scope: '/' };
+
+        OneSignal.setDefaultNotificationUrl("https://www.raywenderlich.com");
+        var oneSignal_options = {};
+        window._oneSignalInitOptions = oneSignal_options;
+
+        oneSignal_options['wordpress'] = true;
+oneSignal_options['appId'] = '653ee6c3-c5e0-440f-9532-0f7d561ae5be';
+oneSignal_options['autoRegister'] = true;
+oneSignal_options['httpPermissionRequest'] = { };
+oneSignal_options['httpPermissionRequest']['enable'] = true;
+oneSignal_options['welcomeNotification'] = { };
+oneSignal_options['welcomeNotification']['title'] = "raywenderlich.com";
+oneSignal_options['welcomeNotification']['message'] = "Thanks — we’ll keep you up-to-date with the latest happenings on the site!";
+oneSignal_options['welcomeNotification']['url'] = "https://www.raywenderlich.com";
+oneSignal_options['path'] = "https://www.raywenderlich.com/wp-content/plugins/onesignal-free-web-push-notifications/sdk_files/";
+oneSignal_options['safari_web_id'] = "web.onesignal.auto.08b05e7f-114b-4b4f-a485-263bca659097";
+oneSignal_options['promptOptions'] = { };
+oneSignal_options['notifyButton'] = { };
+oneSignal_options['notifyButton']['enable'] = true;
+oneSignal_options['notifyButton']['position'] = 'bottom-right';
+oneSignal_options['notifyButton']['theme'] = 'default';
+oneSignal_options['notifyButton']['size'] = 'medium';
+oneSignal_options['notifyButton']['prenotify'] = true;
+oneSignal_options['notifyButton']['showCredit'] = false;
+oneSignal_options['notifyButton']['text'] = {};
+oneSignal_options['notifyButton']['colors'] = {};
+oneSignal_options['notifyButton']['colors']['circle.background'] = '#006837';
+oneSignal_options['notifyButton']['colors']['dialog.button.background'] = '#000000';
+oneSignal_options['notifyButton']['colors']['dialog.button.background.hovering'] = '#006837';
+oneSignal_options['notifyButton']['colors']['dialog.button.background.active'] = '#006837';
+              oneSignal_options['autoRegister'] = false;
+              OneSignal.showHttpPrompt();
+              OneSignal.init(window._oneSignalInitOptions);
+                    });
+
+      function documentInitOneSignal() {
+        var oneSignal_elements = document.getElementsByClassName("OneSignal-prompt");
+
+        var oneSignalLinkClickHandler = function(event) { OneSignal.push(['registerForPushNotifications']); event.preventDefault(); };        for(var i = 0; i < oneSignal_elements.length; i++)
+          oneSignal_elements[i].addEventListener('click', oneSignalLinkClickHandler, false);
+      }
+
+      if (document.readyState === 'complete') {
+           documentInitOneSignal();
+      }
+      else {
+           window.addEventListener("load", function(event){
+               documentInitOneSignal();
+          });
+      }
+    </script>
+
+<style type="text/css">
+/* <![CDATA[ */
+img.latex { vertical-align: middle; border: none; }
+/* ]]> */
+</style>
+    <link rel="stylesheet" href="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/print.css" type="text/css" media="print">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link rel="pingback" href="https://www.raywenderlich.com/xmlrpc.php">
+    <script>var siteUrl = 'https://koenig-assets.raywenderlich.com/wp-content/themes/raywenderlich'</script>
+
+    <noscript>&lt;img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=915433011818742&amp;amp;ev=PixelInitialized" /&gt;</noscript>
+    <style>.single article.post img { max-width:100%; }</style>
+  <script type="text/javascript" async="" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/bsa.js"></script><script type="text/javascript" id="_bsap_js_39fcef7ed4520883d78f129c33995fd2" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/s_39fcef7ed4520883d78f129c33995fd2.js" async="async"></script><script src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/jsapi" type="text/javascript"></script><link type="text/css" href="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/default+en.css" rel="stylesheet"><link type="text/css" href="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/default.css" rel="stylesheet"><script type="text/javascript" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/default+en.I.js"></script><script type="text/javascript" async="" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/embed.js"></script><style type="text/css">
+.gsc-control-cse {
+font-family: Arial, sans-serif;
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-control-cse .gsc-table-result {
+font-family: Arial, sans-serif;
+}
+input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus {
+border-color: #BCCDF0;
+}
+input.gsc-search-button, input.gsc-search-button:hover, input.gsc-search-button:focus {
+border-color: #336699;
+background-color: #E9E9E9;
+background-image: none;
+filter: none;
+}
+.gsc-tabHeader.gsc-tabhInactive {
+border-color: #E9E9E9;
+background-color: #E9E9E9;
+}
+.gsc-tabHeader.gsc-tabhActive {
+border-color: #FF9900;
+border-bottom-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-tabsArea {
+border-color: #FF9900;
+}
+.gsc-webResult.gsc-result,
+.gsc-results .gsc-imageResult {
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gsc-webResult.gsc-result:hover,
+.gsc-imageResult:hover {
+border-color: #FFFFFF;
+background-color: #FFFFFF;
+}
+.gs-webResult.gs-result a.gs-title:link,
+.gs-webResult.gs-result a.gs-title:link b,
+.gs-imageResult a.gs-title:link,
+.gs-imageResult a.gs-title:link b {
+color: #1155CC;
+}
+.gs-webResult.gs-result a.gs-title:visited,
+.gs-webResult.gs-result a.gs-title:visited b,
+.gs-imageResult a.gs-title:visited,
+.gs-imageResult a.gs-title:visited b {
+color: #1155CC;
+}
+.gs-webResult.gs-result a.gs-title:hover,
+.gs-webResult.gs-result a.gs-title:hover b,
+.gs-imageResult a.gs-title:hover,
+.gs-imageResult a.gs-title:hover b {
+color: #1155CC;
+}
+.gs-webResult.gs-result a.gs-title:active,
+.gs-webResult.gs-result a.gs-title:active b,
+.gs-imageResult a.gs-title:active,
+.gs-imageResult a.gs-title:active b {
+color: #1155CC;
+}
+.gsc-cursor-page {
+color: #1155CC;
+}
+a.gsc-trailing-more-results:link {
+color: #1155CC;
+}
+.gs-webResult .gs-snippet,
+.gs-imageResult .gs-snippet,
+.gs-fileFormatType {
+color: #333333;
+}
+.gs-webResult div.gs-visibleUrl,
+.gs-imageResult div.gs-visibleUrl {
+color: #009933;
+}
+.gs-webResult div.gs-visibleUrl-short {
+color: #009933;
+}
+.gs-webResult div.gs-visibleUrl-short {
+display: none;
+}
+.gs-webResult div.gs-visibleUrl-long {
+display: block;
+}
+.gs-promotion div.gs-visibleUrl-short {
+display: none;
+}
+.gs-promotion div.gs-visibleUrl-long {
+display: block;
+}
+.gsc-cursor-box {
+border-color: #FFFFFF;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-page {
+border-color: #E9E9E9;
+background-color: #FFFFFF;
+color: #1155CC;
+}
+.gsc-results .gsc-cursor-box .gsc-cursor-current-page {
+border-color: #FF9900;
+background-color: #FFFFFF;
+color: #1155CC;
+}
+.gsc-webResult.gsc-result.gsc-promotion {
+border-color: #336699;
+background-color: #FFFFFF;
+}
+.gsc-completion-title {
+color: #1155CC;
+}
+.gsc-completion-snippet {
+color: #333333;
+}
+.gs-promotion a.gs-title:link,
+.gs-promotion a.gs-title:link *,
+.gs-promotion .gs-snippet a:link {
+color: #0000FF;
+}
+.gs-promotion a.gs-title:visited,
+.gs-promotion a.gs-title:visited *,
+.gs-promotion .gs-snippet a:visited {
+color: #663399;
+}
+.gs-promotion a.gs-title:hover,
+.gs-promotion a.gs-title:hover *,
+.gs-promotion .gs-snippet a:hover {
+color: #0000FF;
+}
+.gs-promotion a.gs-title:active,
+.gs-promotion a.gs-title:active *,
+.gs-promotion .gs-snippet a:active {
+color: #0000FF;
+}
+.gs-promotion .gs-snippet,
+.gs-promotion .gs-title .gs-promotion-title-right,
+.gs-promotion .gs-title .gs-promotion-title-right * {
+color: #000000;
+}
+.gs-promotion .gs-visibleUrl,
+.gs-promotion .gs-visibleUrl-short {
+color: #008000;
+}</style><script type="text/javascript" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/pro.js" id="_bsap_premium_pro"></script><link rel="preload" href="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/integrator.js" as="script"><script type="text/javascript" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/integrator.js"></script><link rel="preload" href="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/integrator(1).js" as="script"><script type="text/javascript" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/integrator(1).js"></script><script src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/pubads_impl_170.js" async=""></script><script type="text/javascript" id="_bsaPRO_js" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/saved_resource" async="async"></script><script type="text/javascript" id="_bsaPRO_js" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/saved_resource(1)" async="async"></script><script type="text/javascript" id="_bsaPRO_js" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/saved_resource(2)" async="async"></script><style type="text/css">.fb_hidden{position:absolute;top:-10000px;z-index:10001}.fb_reposition{overflow:hidden;position:relative}.fb_invisible{display:none}.fb_reset{background:none;border:0;border-spacing:0;color:#000;cursor:auto;direction:ltr;font-family:"lucida grande", tahoma, verdana, arial, sans-serif;font-size:11px;font-style:normal;font-variant:normal;font-weight:normal;letter-spacing:normal;line-height:1;margin:0;overflow:visible;padding:0;text-align:left;text-decoration:none;text-indent:0;text-shadow:none;text-transform:none;visibility:visible;white-space:normal;word-spacing:normal}.fb_reset>div{overflow:hidden}.fb_link img{border:none}@keyframes fb_transform{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}.fb_animate{animation:fb_transform .3s forwards}
+.fb_dialog{background:rgba(82, 82, 82, .7);position:absolute;top:-10000px;z-index:10001}.fb_reset .fb_dialog_legacy{overflow:visible}.fb_dialog_advanced{padding:10px;-moz-border-radius:8px;-webkit-border-radius:8px;border-radius:8px}.fb_dialog_content{background:#fff;color:#333}.fb_dialog_close_icon{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;cursor:pointer;display:block;height:15px;position:absolute;right:18px;top:17px;width:15px}.fb_dialog_mobile .fb_dialog_close_icon{top:5px;left:5px;right:auto}.fb_dialog_padding{background-color:transparent;position:absolute;width:1px;z-index:-1}.fb_dialog_close_icon:hover{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent}.fb_dialog_close_icon:active{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent}.fb_dialog_loader{background-color:#f6f7f9;border:1px solid #606060;font-size:24px;padding:20px}.fb_dialog_top_left,.fb_dialog_top_right,.fb_dialog_bottom_left,.fb_dialog_bottom_right{height:10px;width:10px;overflow:hidden;position:absolute}.fb_dialog_top_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 0;left:-10px;top:-10px}.fb_dialog_top_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -10px;right:-10px;top:-10px}.fb_dialog_bottom_left{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -20px;bottom:-10px;left:-10px}.fb_dialog_bottom_right{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ye/r/8YeTNIlTZjm.png) no-repeat 0 -30px;right:-10px;bottom:-10px}.fb_dialog_vert_left,.fb_dialog_vert_right,.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{position:absolute;background:#525252;filter:alpha(opacity=70);opacity:.7}.fb_dialog_vert_left,.fb_dialog_vert_right{width:10px;height:100%}.fb_dialog_vert_left{margin-left:-10px}.fb_dialog_vert_right{right:0;margin-right:-10px}.fb_dialog_horiz_top,.fb_dialog_horiz_bottom{width:100%;height:10px}.fb_dialog_horiz_top{margin-top:-10px}.fb_dialog_horiz_bottom{bottom:0;margin-bottom:-10px}.fb_dialog_iframe{line-height:0}.fb_dialog_content .dialog_title{background:#6d84b4;border:1px solid #365899;color:#fff;font-size:14px;font-weight:bold;margin:0}.fb_dialog_content .dialog_title>span{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;float:left;padding:5px 0 7px 26px}body.fb_hidden{-webkit-transform:none;height:100%;margin:0;overflow:visible;position:absolute;top:-10000px;left:0;width:100%}.fb_dialog.fb_dialog_mobile.loading{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;min-height:100%;min-width:100%;overflow:hidden;position:absolute;top:0;z-index:10001}.fb_dialog.fb_dialog_mobile.loading.centered{width:auto;height:auto;min-height:initial;min-width:initial;background:none}.fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner{width:100%}.fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content{background:none}.loading.centered #fb_dialog_loader_close{color:#fff;display:block;padding-top:20px;clear:both;font-size:18px}#fb-root #fb_dialog_ipad_overlay{background:rgba(0, 0, 0, .45);position:absolute;bottom:0;left:0;right:0;top:0;width:100%;min-height:100%;z-index:10000}#fb-root #fb_dialog_ipad_overlay.hidden{display:none}.fb_dialog.fb_dialog_mobile.loading iframe{visibility:hidden}.fb_dialog_content .dialog_header{-webkit-box-shadow:white 0 1px 1px -1px inset;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#738ABA), to(#2C4987));border-bottom:1px solid;border-color:#1d4088;color:#fff;font:14px Helvetica, sans-serif;font-weight:bold;text-overflow:ellipsis;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0;vertical-align:middle;white-space:nowrap}.fb_dialog_content .dialog_header table{-webkit-font-smoothing:subpixel-antialiased;height:43px;width:100%}.fb_dialog_content .dialog_header td.header_left{font-size:12px;padding-left:5px;vertical-align:middle;width:60px}.fb_dialog_content .dialog_header td.header_right{font-size:12px;padding-right:5px;vertical-align:middle;width:60px}.fb_dialog_content .touchable_button{background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#4966A6), color-stop(.5, #355492), to(#2A4887));border:1px solid #29487d;-webkit-background-clip:padding-box;-webkit-border-radius:3px;-webkit-box-shadow:rgba(0, 0, 0, .117188) 0 1px 1px inset, rgba(255, 255, 255, .167969) 0 1px 0;display:inline-block;margin-top:3px;max-width:85px;line-height:18px;padding:4px 12px;position:relative}.fb_dialog_content .dialog_header .touchable_button input{border:none;background:none;color:#fff;font:12px Helvetica, sans-serif;font-weight:bold;margin:2px -12px;padding:2px 6px 3px 6px;text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog_content .dialog_header .header_center{color:#fff;font-size:16px;font-weight:bold;line-height:18px;text-align:center;vertical-align:middle}.fb_dialog_content .dialog_content{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;border:1px solid #555;border-bottom:0;border-top:0;height:150px}.fb_dialog_content .dialog_footer{background:#f6f7f9;border:1px solid #555;border-top-color:#ccc;height:40px}#fb_dialog_loader_close{float:left}.fb_dialog.fb_dialog_mobile .fb_dialog_close_button{text-shadow:rgba(0, 30, 84, .296875) 0 -1px 0}.fb_dialog.fb_dialog_mobile .fb_dialog_close_icon{visibility:hidden}#fb_dialog_loader_spinner{animation:rotateSpinner 1.2s linear infinite;background-color:transparent;background-image:url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);background-repeat:no-repeat;background-position:50% 50%;height:24px;width:24px}@keyframes rotateSpinner{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.fb_iframe_widget{display:inline-block;position:relative}.fb_iframe_widget span{display:inline-block;position:relative;text-align:justify}.fb_iframe_widget iframe{position:absolute}.fb_iframe_widget_fluid_desktop,.fb_iframe_widget_fluid_desktop span,.fb_iframe_widget_fluid_desktop iframe{max-width:100%}.fb_iframe_widget_fluid_desktop iframe{min-width:220px;position:relative}.fb_iframe_widget_lift{z-index:1}.fb_hide_iframes iframe{position:relative;left:-10000px}.fb_iframe_widget_loader{position:relative;display:inline-block}.fb_iframe_widget_fluid{display:inline}.fb_iframe_widget_fluid span{width:100%}.fb_iframe_widget_loader iframe{min-height:32px;z-index:2;zoom:1}.fb_iframe_widget_loader .FB_Loader{background:url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat;height:32px;width:32px;margin-left:-16px;position:absolute;left:50%;z-index:4}
+.fb_invisible_flow{display:inherit;height:0;overflow-x:hidden;width:0}.fb_mobile_overlay_active{height:100%;overflow:hidden;position:fixed;width:100%}.fb_shrink_active{opacity:1;transform:scale(1, 1);transition-duration:200ms;transition-timing-function:ease-out}.fb_shrink_active:active{opacity:.5;transform:scale(.75, .75)}</style><script type="text/javascript" charset="utf-8" async="" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/button.e3d988d72a52909fc67d44f2acde830e.js"></script><link rel="stylesheet" href="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/OneSignalSDKStyles.css"></head>
+  <body class="post-template-default single single-post postid-62435 single-format-standard" style="" cz-shortcut-listen="true">
+    <!-- BuySellAds Ad Code -->
+    <script type="text/javascript">
+    (function(){
+      var bsa = document.createElement('script');
+         bsa.type = 'text/javascript';
+         bsa.async = true;
+         bsa.src = '//s3.buysellads.com/ac/bsa.js';
+      (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
+    })();
+    </script>
+    <!-- End BuySellAds Ad Code -->
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=118196468516511";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>&lt;iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PT3PDSN"
+    height="0" width="0" style="display:none;visibility:hidden"&gt;&lt;/iframe&gt;</noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div id="wrapper">
+      <header id="branding" class="rw_subservice">
+        <div id="main-header">
+          <div id="top-sales-banner" data-cookie-name="subscription2017" style="display: block;">
+            <p><a href="https://videos.raywenderlich.com/courses" id="sub-banner-top" sl-processed="1">Skip the reading — <span>click here</span> for our massive collection of video courses</a></p>
+            <button><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/close.svg" alt="close"></button>
+          </div>
+
+          <div class="block">
+            <nav id="top">
+              <ul id="main-nav">
+                <li class="logo-col no-padding">
+                  <div class="logo-left">
+                    <a href="https://www.raywenderlich.com/" sl-processed="1"></a>
+                  </div>
+                </li>
+
+                <li class="mobile-menu-toggle">
+                  <div>
+                    <button id="toggle-menu" aria-label="Mobile menu"><i class="icon-menu_icon_dash" aria-hidden="true"></i></button>
+                  </div>
+                </li>
+                      
+                <li id="main-links">  
+                  <aside id="search-view" class="grow-wide">
+                    <form action="https://www.raywenderlich.com/" id="nav-search" method="get">
+                      <input type="search" placeholder="Search" id="nav-search-box" name="s" autocomplete="off">
+                      <input type="hidden" name="cof" value="FORID:10">
+                      <button id="search-submit-mobile" type="submit" aria-label="Submit search">
+                        <svg version="1.1" id="svg-search-mobile" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22px" height="20px" viewBox="0 0 34 32" enable-background="new 0 0 34 32" xml:space="preserve" aria-hidden="true">
+                          <path d="M32.128,30.048l-5.312-5.312c-0.032-0.032-0.032-0.032-0.032-0.032l-1.728-1.728c1.983-2.4,3.168-5.504,3.168-8.865
+                                C28.225,6.336,21.889,0,14.112,0C6.336,0,0,6.336,0,14.112c0,7.777,6.336,14.113,14.112,14.113c3.712,0,7.041-1.44,9.568-3.776
+                                l5.088,5.088c0.032,0.032,0.032,0.032,0.032,0.032l1.921,1.92c0.479,0.447,1.184,0.544,1.567,0.128
+                                C32.672,31.232,32.607,30.527,32.128,30.048L32.128,30.048z M14.112,26.24c-6.688,0-12.128-5.44-12.128-12.128
+                                S7.424,1.984,14.112,1.984S26.24,7.424,26.24,14.112S20.8,26.24,14.112,26.24L14.112,26.24z"></path>
+                        </svg>
+                      </button>
+                    </form>
+                  </aside>
+                  <ul>
+                    <li class="padding-left">
+                                            <a href="https://www.raywenderlich.com/" class="top-level-link active" sl-processed="1">
+                        Tutorials<svg version="1.1" class="svg-angle-down" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="9px" height="9px" viewBox="1.376 11.648 17.824 10.4" enable-background="new 1.376 11.648 17.824 10.4" xml:space="preserve" aria-hidden="true">
+                          <path d="M19.2,13.152c0,0.149-0.063,0.288-0.192,0.416l-8.32,8.321c-0.106,0.105-0.245,0.159-0.416,0.159
+                          c-0.17,0-0.299-0.054-0.384-0.159l-8.32-8.321c-0.128-0.128-0.192-0.267-0.192-0.416s0.064-0.288,0.192-0.416l0.864-0.896
+                          c0.128-0.128,0.267-0.192,0.416-0.192s0.288,0.064,0.416,0.192l7.008,7.008l7.041-7.008c0.105-0.128,0.244-0.192,0.416-0.192
+                          c0.17,0,0.299,0.064,0.383,0.192l0.896,0.896C19.137,12.843,19.2,12.981,19.2,13.152z"></path>
+                        </svg>
+                      </a>
+                      <ul class="dropdown-menu written-dropdown slighter-fade-up">
+                        <li><a href="https://www.raywenderlich.com/swift-language-tutorials" sl-processed="1"><i class="category-icon cat-1" aria-hidden="true"></i><span>Swift</span></a></li>
+                        <li><a href="https://www.raywenderlich.com/ios-tutorials" sl-processed="1"><i class="category-icon cat-2" aria-hidden="true"></i><span>iOS</span></a></li>
+                        <li><a href="https://www.raywenderlich.com/android-tutorials" sl-processed="1"><i class="category-icon cat-3" aria-hidden="true"></i><span>Android</span></a></li>
+                        <li><a href="https://www.raywenderlich.com/macos-tutorials" sl-processed="1"><i class="category-icon cat-4" aria-hidden="true"></i><span>macOS</span></a></li>
+                        <li><a href="https://www.raywenderlich.com/apple-game-frameworks-tutorials" sl-processed="1"><i class="category-icon cat-5" aria-hidden="true"></i><span>Apple Game Frameworks</span></a></li>
+                        <li><a href="https://www.raywenderlich.com/unity-tutorials" sl-processed="1"><i class="category-icon cat-6" aria-hidden="true"></i><span>Unity</span></a></li>
+                        <li><a href="https://www.raywenderlich.com/articles" sl-processed="1"><i class="category-icon cat-7" aria-hidden="true"></i><span>Articles</span></a></li>
+                        <li><a href="https://www.raywenderlich.com/tutorial-archive" class="active" sl-processed="1"><i class="category-icon cat-8" aria-hidden="true"></i><span>Archive</span></a></li>
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a href="https://videos.raywenderlich.com/" class="top-level-link" sl-processed="1">Videos<svg version="1.1" class="svg-angle-down" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="9px" height="9px" viewBox="1.376 11.648 17.824 10.4" enable-background="new 1.376 11.648 17.824 10.4" xml:space="preserve" aria-hidden="true">
+                        <path d="M19.2,13.152c0,0.149-0.063,0.288-0.192,0.416l-8.32,8.321c-0.106,0.105-0.245,0.159-0.416,0.159
+                          c-0.17,0-0.299-0.054-0.384-0.159l-8.32-8.321c-0.128-0.128-0.192-0.267-0.192-0.416s0.064-0.288,0.192-0.416l0.864-0.896
+                          c0.128-0.128,0.267-0.192,0.416-0.192s0.288,0.064,0.416,0.192l7.008,7.008l7.041-7.008c0.105-0.128,0.244-0.192,0.416-0.192
+                          c0.17,0,0.299,0.064,0.383,0.192l0.896,0.896C19.137,12.843,19.2,12.981,19.2,13.152z"></path>
+                        </svg></a>
+                      <ul class="dropdown-menu video-dropdown slighter-fade-up">
+                        <li><a href="https://videos.raywenderlich.com/" sl-processed="1"><i class="category-icon cat-1" aria-hidden="true"></i><span>Home</span></a></li>
+                        <li><a href="https://videos.raywenderlich.com/courses" sl-processed="1"><i class="category-icon cat-2" aria-hidden="true"></i><span>Courses</span></a></li>
+                        <li><a href="https://videos.raywenderlich.com/screencasts" sl-processed="1"><i class="category-icon cat-3" aria-hidden="true"></i><span>Screencasts</span></a></li>
+                        <li><a href="https://videos.raywenderlich.com/schedule" sl-processed="1"><i class="category-icon cat-4" aria-hidden="true"></i><span>Upcoming</span></a></li>
+                      </ul>
+                    </li>
+
+                    <li><a href="https://www.raywenderlich.com/rwpodcast" sl-processed="1">Podcast</a></li>
+                    <li><a href="https://forums.raywenderlich.com/" sl-processed="1">Forums</a></li>
+                    <li class="padding-right">
+                      <a href="https://store.raywenderlich.com/" sl-processed="1">Store</a>
+                    </li>
+                  </ul>
+                </li>
+
+                <li class="search-button-holder-desktop">
+                  <button id="search-submit-desktop" class="search-submit" aria-label="Show search field">
+                    <svg version="1.1" id="svg-search-desktop" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="22px" height="22px" viewBox="0 0 34 32" enable-background="new 0 0 34 32" xml:space="preserve" aria-hidden="true">
+                    <path d="M32.128,30.048l-5.312-5.312c-0.032-0.032-0.032-0.032-0.032-0.032l-1.728-1.728c1.983-2.4,3.168-5.504,3.168-8.865
+                      C28.225,6.336,21.889,0,14.112,0C6.336,0,0,6.336,0,14.112c0,7.777,6.336,14.113,14.112,14.113c3.712,0,7.041-1.44,9.568-3.776
+                      l5.088,5.088c0.032,0.032,0.032,0.032,0.032,0.032l1.921,1.92c0.479,0.447,1.184,0.544,1.567,0.128
+                      C32.672,31.232,32.607,30.527,32.128,30.048L32.128,30.048z M14.112,26.24c-6.688,0-12.128-5.44-12.128-12.128
+                      S7.424,1.984,14.112,1.984S26.24,7.424,26.24,14.112S20.8,26.24,14.112,26.24L14.112,26.24z"></path>
+                    </svg>
+                  </button>
+                </li>                    
+  
+                <script>
+                  jQuery.ajax({
+                    type : "POST",
+                    data : { "javascript" : "false", "url"  : window.location.href  },
+                    url : "https://www.raywenderlich.com/wp-content/themes/raywenderlich/templates/login_area.php",
+                    cache : false,
+                  }).done(function(html) {
+                    jQuery("ul#main-nav").append(html);
+                  })
+                </script>
+
+              
+				<li id="user-account-navigation" class="login-controls logged-out">
+	          <div>
+	              <a href="https://www.raywenderlich.com/session/new?mode=login&amp;redirect_uri=https%3A%2F%2Fwww.raywenderlich.com%2F62435%2Fmake-swipeable-table-view-cell-actions-without-going-nuts-scroll-views" class="login-link" sl-processed="1">Login / Sign Up</a>
+	              <a href="https://store.raywenderlich.com/products/subscription" id="sub-banner-navigation" class="subscribe-link" sl-processed="1"><span class="full-text">Become a video</span><span class="full-text">subscriber</span><span class="mobile-text">Subscribe</span></a>
+	          </div>
+	      </li>
+
+</ul>
+            </nav>
+          </div>
+        </div>
+        <div class="rw-green-border"></div>
+
+        <div class="subnav-band"></div>
+              <!-- .wrapper -->
+      </header>
+    </div>
+
+    <div class="wrapper clearfix" id="print-header" style="display:none">
+      <img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/header-graphic.svg" width="1200" height="78">
+    </div>
+    <div id="main" class="wrapper clearfix">
+      <div id="container">
+<div id="primary" class="no-margin-left">
+  <div id="primary-container">
+    <div class="banner-ad" syle="overflow:hidden">
+      <!-- BuySellAds.com Ad Code -->
+      <div id="bsap_1272017" class="bsap bsap_1272017" data-serve="CV7IEKT">
+<style type="text/css">
+div.bsap_1272017{width:100%;display:block;}div.bsap_1272017 a{width:728px;}div.bsap_1272017 a img{padding:0;}div.bsap_1272017 a em{font-style:normal;}div.bsap_1272017 a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0;text-align:center;text-decoration:none;overflow:hidden;float:left;margin-bottom:10px;}
+div.bsap_1272017 img{border:0;clear:right;}
+div.bsap_1272017 a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;}
+div.bsap_1272017 a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;}div.bsap_1272017 a{line-height:100%;}div.bsap_1272017 a.adhere{width:728px;height:90px;line-height:720%;}html>body div.bsap_1272017 a.adhere{width:726px;height:88px;}div.bsap_1272017 img.s{height:0;width:0;}div.bsap_1272017{line-height:9px;}div.bsap_1272017 .bsap_adhere2,div.bsap_1272017 iframe{float:left;}div.bsap_1272017 .bsap_adhere2 a{height:90px;width:20px;background:url(http:\/\/s3.buysellads.com\/ac\/ah20x90_1.gif) no-repeat 0 0;text-indent:-9999px;}
+</style>
+<iframe width="728" height="90" id="ad_1272017_backfill2_frame" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/raw_2fd8e3019ee846ca965e3121208c9947.html" frameborder="0" class="bsap_adframe" scrolling="no"></iframe>
+
+<script type="text/javascript" id="auto_1" class="ignoreme"> if (typeof(_bsap_serving_callback) !== 'undefined') _bsap_serving_callback(20054, 'CV7IEKT', ''); </script>
+<script type="text/javascript" id="auto_2" class="ignoreme"> if (typeof(BSACallback) !== 'undefined') BSACallback(); </script></div>
+      <!-- End BuySellAds.com Ad Code -->
+    </div>
+    <div id="content">
+            <article id="post-62435" class="clearfix post-62435 post type-post status-publish format-standard has-post-thumbnail hentry category-archive">
+        <header class="entry-header">
+          <h2 class="entry-title">
+            <a href="https://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views" title="How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views" sl-processed="1">How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views</a>
+          </h2>
+          <div class="tutorial-meta" id="larger-screens">
+            <div class="author-meta">
+              <a href="https://www.raywenderlich.com/u/designatednerd" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/62467727d6e6b2fc18d0fed04078578b.jpg" alt="" width="100" height="100" class="user-avatar"></a><a href="https://www.raywenderlich.com/u/designatednerd" class="author-name" sl-processed="1">Ellen Shapiro</a>                    <span class="author-post-date">on April 24, 2014</span>
+                              </div>
+            <div class="social-links">
+              <ul>
+                <li class="twitter"><div id="tweetbutton62435m" class="tw_button" style="margin-bottom:10px;"><iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" title="Twitter Tweet Button" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/tweet_button.eaf4b750247dd4d0c4a27df474e7e934.en.html" style="position: static; visibility: visible; width: 61px; height: 20px;" data-url="https://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views"></iframe></div></li>                <li class="facebook iframe-link" style="position: relative;top: 0px;left: 11px; display: block;">
+                  <iframe src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/like.html" allowtransparency="true" frameborder="0" scrolling="no" style="width: 74px; height: 20px;"></iframe>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </header>
+
+        
+        <div class="content-wrapper">
+          <div id="attachment_63641" style="max-width: 330px" class="wp-caption alignright"><a href="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/swipeable-bounce-small.gif" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/swipeable-bounce-small.gif" alt="Cookbook: Move table view cells with a long press gesture!" width="320" height="320" class="size-full wp-image-64560 bordered"></a><p class="wp-caption-text">Make a swipeable table view cell without going nuts with scroll views!</p></div>
+<p>Apple introduced a great new user interface scheme in the iOS 7 Mail app – swiping left to reveal a menu with multiple actions. This tutorial shows you how to make such a swipeable table view cell without getting bogged down in nested scroll views. If you’re unsure what a swipeable table view cell means, then see this screenshot of Apple’s Mail.app:</p>
+<p><a href="http://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views/img_3743" rel="attachment wp-att-62457" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/IMG_3743-180x320.png" alt="Multiple Options" width="180" height="320" class="size-medium wp-image-62457" srcset="https://koenig-media.raywenderlich.com/uploads/2014/01/IMG_3743-180x320.png 180w, https://koenig-media.raywenderlich.com/uploads/2014/01/IMG_3743-281x500.png 281w, https://koenig-media.raywenderlich.com/uploads/2014/01/IMG_3743.png 640w" sizes="(max-width: 180px) 100vw, 180px"></a></p>
+<p>You’d think that after introducing something like this, Apple would have made it available to developers. After all, how much harder could it be? Unfortunately, they’ve only made the Delete button available to developers — at least for the time being. If you want to add other buttons, or change the text or color of the Delete button, you’ll have to write the whole thing yourself. </p>
+<p>In this tutorial, you’ll learn how to implement the simple swipe-to-delete action before moving on to the swipe-to-perform-actions. This will require some digging into the structure of an iOS 7 <em>UITableViewCell</em> to replicate the desired behavior. You’ll use a couple of my favorite techniques for examining view hierarchies: coloring views and using the <code>recursiveDescription</code> method to log the view hierarchy.</p>
+<p>Ready to see what buttons and actions are underneath those innocent-looking table view cells? Let’s get started!</p>
+<h2>Getting Started</h2>
+<p>Open Xcode, go to <em>File\New\Project…</em> and select a <em>Master-Detail Application</em> for iOS as shown below:</p>
+<p><a href="http://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views/screen-shot-2013-11-28-at-6-42-47-am" rel="attachment wp-att-62444" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/Screen-Shot-2013-11-28-at-6.42.47-AM-475x320.jpg" alt="Master-Detail Application" width="475" height="320" class="aligncenter size-medium wp-image-62444" srcset="https://koenig-media.raywenderlich.com/uploads/2014/01/Screen-Shot-2013-11-28-at-6.42.47-AM-475x320.jpg 475w, https://koenig-media.raywenderlich.com/uploads/2014/01/Screen-Shot-2013-11-28-at-6.42.47-AM-700x471.jpg 700w, https://koenig-media.raywenderlich.com/uploads/2014/01/Screen-Shot-2013-11-28-at-6.42.47-AM.jpg 732w" sizes="(max-width: 475px) 100vw, 475px"></a></p>
+<p>Name your project <em>SwipeableCell</em> and fill in your own organization name and company identifier. Select <em>iPhone</em> as the target device and make sure the <em>Use Core Data</em> checkbox is unchecked, as shown below:</p>
+<p><a href="http://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views/screen_shot_2013-11-28_at_1-02-38_pm" rel="attachment wp-att-62445" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/Screen_Shot_2013-11-28_at_1.02.38_PM-472x320.png" alt="Set Up Project" width="472" height="320" class="aligncenter size-medium wp-image-62445" srcset="https://koenig-media.raywenderlich.com/uploads/2014/01/Screen_Shot_2013-11-28_at_1.02.38_PM-472x320.png 472w, https://koenig-media.raywenderlich.com/uploads/2014/01/Screen_Shot_2013-11-28_at_1.02.38_PM-700x473.png 700w, https://koenig-media.raywenderlich.com/uploads/2014/01/Screen_Shot_2013-11-28_at_1.02.38_PM.png 733w" sizes="(max-width: 472px) 100vw, 472px"></a></p>
+<p>For a proof of concept project like this, you want to keep the data model as simple as possible.</p>
+<p>Open <em>MasterViewController.m</em> and find <code>viewDidLoad</code>. Replace the default method which sets up the navigation bar items with the following implementation:</p>
+<pre lang="objc" class="language-objc hljs objectivec">- (<span class="hljs-keyword">void</span>)viewDidLoad {
+  [<span class="hljs-keyword">super</span> viewDidLoad];
+
+  <span class="hljs-comment">//1</span>
+  _objects = [<span class="hljs-built_in">NSMutableArray</span> array];
+    
+  <span class="hljs-comment">//2</span>
+  <span class="hljs-built_in">NSInteger</span> numberOfItems = <span class="hljs-number">30</span>;
+  <span class="hljs-keyword">for</span> (<span class="hljs-built_in">NSInteger</span> i = <span class="hljs-number">1</span>; i &lt;= numberOfItems; i++) {
+    <span class="hljs-built_in">NSString</span> *item = [<span class="hljs-built_in">NSString</span> stringWithFormat:<span class="hljs-string">@"Item #%d"</span>, i];
+    [_objects addObject:item];
+  }
+}
+</pre>
+<p>There are two things happening in this method:</p>
+<ol>
+<li>This line creates and initializes an instance of <em>NSMutableArray</em> so that you can add objects to it. If your array isn’t initialized, you can call <code>addObject:</code> as many times as you want, but your objects won’t be stored anywhere.</li>
+<li>This loop adds a bunch of strings to the <code>_objects</code> array; these are the strings displayed in the table view when your application runs. You can change the value of <code>numberOfItems</code> to store more or fewer strings as you see fit.</li>
+</ol>
+<p>Next, find <code>tableView:cellForRowAtIndexPath:</code> and replace its implementation with the following:</p>
+<pre lang="objc" class="language-objc hljs objectivec">- (<span class="hljs-built_in">UITableViewCell</span> *)tableView:(<span class="hljs-built_in">UITableView</span> *)tableView cellForRowAtIndexPath:(<span class="hljs-built_in">NSIndexPath</span> *)indexPath {
+    <span class="hljs-built_in">UITableViewCell</span> *cell = [tableView dequeueReusableCellWithIdentifier:<span class="hljs-string">@"Cell"</span> forIndexPath:indexPath];
+
+    <span class="hljs-built_in">NSString</span> *item = _objects[indexPath.row];
+    cell.textLabel.text = item;
+    <span class="hljs-keyword">return</span> cell;
+}
+</pre>
+<p>The boilerplate <code>tableView:cellForRowAtIndexPath:</code> uses date strings as sample data; instead, your implementation uses the <code>NSString</code> objects in your array to populate the <code>UITableViewCell</code>’s <code>textLabel</code>.</p>
+<p>Scroll down to <code>tableView:canEditRowAtIndexPath:</code>; you'll see that this method is already set up to return <code>YES</code> which means that every row of the table view supports editing. </p>
+<p>Directly below that method, <code>tableView:commitEditingStyle:forRowAtIndexPath:</code> handles the deletion of objects. However, since you won’t be adding anything in this application, you'll tweak it a bit to better suit your needs.</p>
+<p>Replace <code>tableView:commitEditingStyle:forRowAtIndexPath:</code>  with the following code:</p>
+<pre lang="objc" class="language-objc hljs objectivec">- (<span class="hljs-keyword">void</span>)tableView:(<span class="hljs-built_in">UITableView</span> *)tableView commitEditingStyle:(<span class="hljs-built_in">UITableViewCellEditingStyle</span>)editingStyle forRowAtIndexPath:(<span class="hljs-built_in">NSIndexPath</span> *)indexPath {
+  <span class="hljs-keyword">if</span> (editingStyle == <span class="hljs-built_in">UITableViewCellEditingStyleDelete</span>) {
+    [_objects removeObjectAtIndex:indexPath.row];
+    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:<span class="hljs-built_in">UITableViewRowAnimationFade</span>];
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"Unhandled editing style! %d"</span>, editingStyle);
+  }
+}
+</pre>
+<p>When the user deletes a row you remove the object at the index passed in, from the backing array, and tells the table view it needs to remove the row at the same <code>indexPath</code> to ensure the model and view both match.</p>
+<p>Your app only allows for the "delete" editing style, but it’s a good idea to log what you’re not handling in the <code>else</code> condition. That way if something fishy happens, you'll get a heads-up message logged to the console rather than a silent return from the method.</p>
+<p>Finally, there's a little bit of cleanup to do. Still in <em>MasterViewController.m</em>, delete <code>insertNewObject</code>. This method is now incorrect, since insertion is no longer supported.</p>
+<p>Build and run your application; you’ll see a nice simple list of items as shown below: </p>
+<p><a href="http://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views/ios-simulator-screen-shot-nov-28-2013-6-55-07-am" rel="attachment wp-att-62455" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/iOS-Simulator-Screen-shot-Nov-28-2013-6.55.07-AM-213x320.png" alt="Closed Easy" width="213" height="320" class="aligncenter size-medium wp-image-62455" srcset="https://koenig-media.raywenderlich.com/uploads/2014/01/iOS-Simulator-Screen-shot-Nov-28-2013-6.55.07-AM-213x320.png 213w, https://koenig-media.raywenderlich.com/uploads/2014/01/iOS-Simulator-Screen-shot-Nov-28-2013-6.55.07-AM-333x500.png 333w, https://koenig-media.raywenderlich.com/uploads/2014/01/iOS-Simulator-Screen-shot-Nov-28-2013-6.55.07-AM.png 640w" sizes="(max-width: 213px) 100vw, 213px"></a></p>
+<p>Swipe one of rows to the left and you'll see a “Delete” button, like so:</p>
+<p><a href="http://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views/ios-simulator-screen-shot-nov-28-2013-1-06-41-pm" rel="attachment wp-att-62456" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/iOS-Simulator-Screen-shot-Nov-28-2013-1.06.41-PM-213x320.png" alt="Easy delete button" width="213" height="320" class="aligncenter size-medium wp-image-62456" srcset="https://koenig-media.raywenderlich.com/uploads/2014/01/iOS-Simulator-Screen-shot-Nov-28-2013-1.06.41-PM-213x320.png 213w, https://koenig-media.raywenderlich.com/uploads/2014/01/iOS-Simulator-Screen-shot-Nov-28-2013-1.06.41-PM-333x500.png 333w, https://koenig-media.raywenderlich.com/uploads/2014/01/iOS-Simulator-Screen-shot-Nov-28-2013-1.06.41-PM.png 640w" sizes="(max-width: 213px) 100vw, 213px"></a></p>
+<p>Woo — that was easy. But now it's time to get your hands dirty and dig into the guts of the view hierarchies to see what's going on.</p>
+<h2>Digging into the View Hierarchy</h2>
+<p>First things first: you need to see where the delete button lives in the view hierarchy so that you can decide if you can continue to use it in your custom cell. </p>
+<p>One of the easiest ways to do this is to color the separate pieces of the view to make it obvious where specific pieces begin and end. </p>
+<p>Still working in <em>MasterViewController.m</em>, add the following two lines to <code>tableView:cellForRowAtIndexPath:</code> just above the final <code>return</code> statement:</p>
+<pre lang="objc" class="language-objc hljs objectivec">cell.backgroundColor = [<span class="hljs-built_in">UIColor</span> purpleColor];
+cell.contentView.backgroundColor = [<span class="hljs-built_in">UIColor</span> blueColor];
+</pre>
+<p>These colors make it clear where these views are in the cell. </p>
+<p>Build and run your application again, you’ll see the colored elements as in the screenshot below: </p>
+<p><a href="http://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views/ios-simulator-screen-shot-nov-28-2013-8-08-29-pm" rel="attachment wp-att-62461" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/iOS-Simulator-Screen-shot-Nov-28-2013-8.08.29-PM-213x320.png" alt="Colored Cells" width="213" height="320" class="aligncenter size-medium wp-image-62461" srcset="https://koenig-media.raywenderlich.com/uploads/2014/01/iOS-Simulator-Screen-shot-Nov-28-2013-8.08.29-PM-213x320.png 213w, https://koenig-media.raywenderlich.com/uploads/2014/01/iOS-Simulator-Screen-shot-Nov-28-2013-8.08.29-PM-333x500.png 333w, https://koenig-media.raywenderlich.com/uploads/2014/01/iOS-Simulator-Screen-shot-Nov-28-2013-8.08.29-PM.png 640w" sizes="(max-width: 213px) 100vw, 213px"></a></p>
+<p>You can clearly see the <code>contentView</code> in blue stops before the accessory indicator begins, but the cell itself — highlighted in purple — continues all the way over to the edge of the <code>UITableView</code>. </p>
+<p>Drag the cell over to the left, and you'll see something similar to the following:</p>
+<p><a href="http://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views/ios-simulator-screen-shot-nov-28-2013-2-16-46-pm" rel="attachment wp-att-62462" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/iOS-Simulator-Screen-shot-Nov-28-2013-2.16.46-PM-213x320.png" alt="Start to drag cell" width="213" height="320" class="aligncenter size-medium wp-image-62462" srcset="https://koenig-media.raywenderlich.com/uploads/2014/01/iOS-Simulator-Screen-shot-Nov-28-2013-2.16.46-PM-213x320.png 213w, https://koenig-media.raywenderlich.com/uploads/2014/01/iOS-Simulator-Screen-shot-Nov-28-2013-2.16.46-PM-333x500.png 333w, https://koenig-media.raywenderlich.com/uploads/2014/01/iOS-Simulator-Screen-shot-Nov-28-2013-2.16.46-PM.png 640w" sizes="(max-width: 213px) 100vw, 213px"></a></p>
+<p>It looks like the delete button is actually hiding <i>below</i> the cell. The only way to be 100% sure is to dig a little deeper into the view hierarchy. </p>
+<p>To assist your view archaeology, you can use a debugging-only method named <code>recursiveDescription</code> to print out the view hierarchy of any view. Note that this is a private method, and <em>should not be included in any code that’s going to the App Store</em>, but it is highly useful for examining your view hierarchy.</p>
+<div class="note">
+<p><em>Note:</em> There are a couple of paid apps which allow you to examine the view hierarchy visually: <a href="http://revealapp.com/" title="Reveal App" target="_blank" sl-processed="1">Reveal</a> and <a href="http://sites.fastspring.com/foundry376/instant/sparkinspector" title="Spark Inspector" target="_blank" sl-processed="1">Spark Inspector</a>. Additionally, there's an open-source project that does this as well: <a href="https://github.com/glock45/iOS-Hierarchy-Viewer" title="iOS-Hierarchy-Viewer" target="_blank" sl-processed="1">iOS-Hierarchy-Viewer</a>.</p>
+<p>These apps vary in price and quality, but they all require the addition of a library to your project to supports their product. Logging the <code>recursiveDescription</code> is definitely the best way to access this information if you don’t want to install additional libraries within your project.</p>
+</div>
+<p>Add the following log statement to <code>tableView:cellForRowAtIndexPath:</code>, just before the final return statement:</p>
+<pre lang="objc" class="language-objc hljs objectivec"><span class="hljs-meta">#ifdef DEBUG</span>
+  <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"Cell recursive description:\n\n%@\n\n"</span>, [cell performSelector:<span class="hljs-keyword">@selector</span>(recursiveDescription)]);
+<span class="hljs-meta">#endif</span>
+</pre>
+<p>Once you add this line, you'll get a warning that the <code>recursiveDescription</code> method hasn’t been declared; it's a private method and the compiler doesn’t know it exists. The wrapper <code>ifdef</code> / <code>endif</code> will make extra sure the line doesn't make it into your release builds.</p>
+<p>Build and run your application; you’ll see your console filled to the brim with log statements, similar to the following:</p>
+<pre lang="objc" class="language-objc hljs objectivec"><span class="hljs-number">2014</span><span class="hljs-number">-02</span><span class="hljs-number">-01</span> <span class="hljs-number">09</span>:<span class="hljs-number">56</span>:<span class="hljs-number">15.587</span> SwipeableCell[<span class="hljs-number">46989</span>:<span class="hljs-number">70</span>b] Cell recursive description:
+
+&lt;<span class="hljs-built_in">UITableViewCell</span>: <span class="hljs-number">0x8e25350</span>; frame = (<span class="hljs-number">0</span> <span class="hljs-number">396</span>; <span class="hljs-number">320</span> <span class="hljs-number">44</span>); text = <span class="hljs-string">'Item #10'; autoresize = W; layer = &lt;CALayer: 0x8e254e0&gt;&gt;
+   | &lt;UITableViewCellScrollView: 0x8e636e0; frame = (0 0; 320 44); clipsToBounds = YES; autoresize = W+H; gestureRecognizers = &lt;NSArray: 0x8e1d7d0&gt;; layer = &lt;CALayer: 0x8e1d960&gt;; contentOffset: {0, 0}&gt;
+   |    | &lt;UIButton: 0x8e22a70; frame = (302 16; 8 12.5); opaque = NO; userInteractionEnabled = NO; layer = &lt;CALayer: 0x8e22d10&gt;&gt;
+   |    |    | &lt;UIImageView: 0x8e20ac0; frame = (0 0; 8 12.5); clipsToBounds = YES; opaque = NO; userInteractionEnabled = NO; layer = &lt;CALayer: 0x8e5efc0&gt;&gt;
+   |    | &lt;UITableViewCellContentView: 0x8e23aa0; frame = (0 0; 287 44); opaque = NO; gestureRecognizers = &lt;NSArray: 0x8e29c20&gt;; layer = &lt;CALayer: 0x8e62220&gt;&gt;
+   |    |    | &lt;UILabel: 0x8e23d70; frame = (15 0; 270 43); text = '</span>Item <span class="hljs-meta">#10'; clipsToBounds = YES; opaque = NO; layer = <span class="hljs-meta-string">&lt;CALayer: 0x8e617d0&gt;</span>&gt;</span>
+</pre>
+<p>Whoa — that's tons of information. What you’re seeing here is the recursive description log statement, printed out every time a cell is created or recycled. So you should see a few of these, one for each cell that's initially on the screen. <code>recursiveDescription</code> goes through every subview of a particular view and logs out the description of that view aligned just as the view hierarchy is. It does this recursively, so for each subview it goes looks at the subviews of that, and so on.</p>
+<p>It's a lot of information, but it is calling <code>description</code> on every view as you step through the view hierarchy. Therefore you'll see the same information as if you logged each individual view on its own, but this output adds a pipe character and some spacing at the front to reflect the structure of the views. </p>
+<p>To make it a little easier to read, here's just the class name and frame: </p>
+<pre lang="objc" class="language-objc hljs objectivec">&lt;<span class="hljs-built_in">UITableViewCell</span>; frame = (<span class="hljs-number">0</span> <span class="hljs-number">396</span>; <span class="hljs-number">320</span> <span class="hljs-number">44</span>);&gt; <span class="hljs-comment">//1</span>
+   | &lt;<span class="hljs-built_in">UITableViewCellScrollView</span>; frame = (<span class="hljs-number">0</span> <span class="hljs-number">0</span>; <span class="hljs-number">320</span> <span class="hljs-number">44</span>); &gt; <span class="hljs-comment">//2</span>
+   |    | &lt;<span class="hljs-built_in">UIButton</span>; frame = (<span class="hljs-number">302</span> <span class="hljs-number">16</span>; <span class="hljs-number">8</span> <span class="hljs-number">12.5</span>)&gt; <span class="hljs-comment">//3</span>
+   |    |    | &lt;<span class="hljs-built_in">UIImageView</span>; frame = (<span class="hljs-number">0</span> <span class="hljs-number">0</span>; <span class="hljs-number">8</span> <span class="hljs-number">12.5</span>);&gt; <span class="hljs-comment">//4</span>
+   |    | &lt;<span class="hljs-built_in">UITableViewCellContentView</span>; frame = (<span class="hljs-number">0</span> <span class="hljs-number">0</span>; <span class="hljs-number">287</span> <span class="hljs-number">44</span>);&gt; <span class="hljs-comment">//5</span>
+   |    |    | &lt;<span class="hljs-built_in">UILabel</span>; frame = (<span class="hljs-number">15</span> <span class="hljs-number">0</span>; <span class="hljs-number">270</span> <span class="hljs-number">43</span>);&gt; <span class="hljs-comment">//6</span>
+</pre>
+<p>There are six views within the cell as it exists right now: </p>
+<ol>
+<li><code>UITableViewCell</code> — This is the highest-level view. The frame log shows that it is 320 points wide and 44 points tall - the height and width you’d expect since it’s as wide as the screen and 44 points tall.</li>
+<p> </p>
+<li><code>UITableViewCellScrollView</code> — While you can’t use this private class directly, its name gives you a pretty good idea as to its purpose in life. It's exactly the same size as the cell itself. We can infer that it's job is to handle the sliding out of the content atop the delete button.</li>
+<li><code>UIButton</code> — This lives at the far right of the cell and serves as the disclosure indicator button. Note that this is not the delete button, but rather the chevron - the disclosure indicator.</li>
+<p> </p>
+<li><code>UIImageView</code> — This is a subview of the above <code>UIButton</code> and contains the image for the disclosure indicator.</li>
+<li><code>UITableViewCellContentView</code> — Another private class that contains the content of your cell. This view is exposed to the developer as the <code>UITableViewCell</code>’s <code>contentView</code> property. It’s only exposed to the outside world as a <code>UIView</code>, which means you can only call public <code>UIView</code> methods on it; you can’t use any of the private methods associated with this custom subclass. </li>
+<li><code>UILabel</code> — Displays the “Item #” text. </li>
+</ol>
+<p>You’ll notice that the delete button appears nowhere in this view hierarchy. Hmm. Maybe it's only added to the hierarchy when the swipe starts. That would make sense as an optimisation. There's no point having the delete button there when it's not necessary. To test this hypothesis, add the following code to <code>tableView:commitEditingStyle:forRowAtIndexPath:</code>, inside the delete editing style if-statement:</p>
+<pre lang="objc" class="language-objc hljs objectivec"><span class="hljs-meta">#ifdef DEBUG</span>
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"Cell recursive description:\n\n%@\n\n"</span>, [[tableView cellForRowAtIndexPath:indexPath] performSelector:<span class="hljs-keyword">@selector</span>(recursiveDescription)]);
+<span class="hljs-meta">#endif</span>
+</pre>
+<p>This is the same as before, except this time we need to grab the cell from the table view using <code>cellForRowAtIndexPath:</code>.</p>
+<p>Build &amp; run the application, swipe over the first cell, and tap Delete. Then check your console and find the last recursive description for the first cell. You know it's the first cell because the <code>text</code> property of the cell is set to <code>Item #1</code>. You should see something like this:</p>
+<pre lang="objc" class="language-objc hljs objectivec">&lt;<span class="hljs-built_in">UITableViewCell</span>: <span class="hljs-number">0xa816140</span>; frame = (<span class="hljs-number">0</span> <span class="hljs-number">0</span>; <span class="hljs-number">320</span> <span class="hljs-number">44</span>); text = <span class="hljs-string">'Item #1'</span>; autoresize = W; gestureRecognizers = &lt;<span class="hljs-built_in">NSArray</span>: <span class="hljs-number">0x8b635d0</span>&gt;; layer = &lt;<span class="hljs-built_in">CALayer</span>: <span class="hljs-number">0xa816310</span>&gt;&gt;
+   | &lt;<span class="hljs-built_in">UITableViewCellScrollView</span>: <span class="hljs-number">0xa817070</span>; frame = (<span class="hljs-number">0</span> <span class="hljs-number">0</span>; <span class="hljs-number">320</span> <span class="hljs-number">44</span>); clipsToBounds = <span class="hljs-literal">YES</span>; autoresize = W+H; gestureRecognizers = &lt;<span class="hljs-built_in">NSArray</span>: <span class="hljs-number">0xa8175e0</span>&gt;; layer = &lt;<span class="hljs-built_in">CALayer</span>: <span class="hljs-number">0xa817260</span>&gt;; contentOffset: {<span class="hljs-number">82</span>, <span class="hljs-number">0</span>}&gt;
+   |    | &lt;<span class="hljs-built_in">UITableViewCellDeleteConfirmationView</span>: <span class="hljs-number">0x8b62d40</span>; frame = (<span class="hljs-number">320</span> <span class="hljs-number">0</span>; <span class="hljs-number">82</span> <span class="hljs-number">44</span>); layer = &lt;<span class="hljs-built_in">CALayer</span>: <span class="hljs-number">0x8b62e20</span>&gt;&gt;
+   |    |    | &lt;<span class="hljs-built_in">UITableViewCellDeleteConfirmationButton</span>: <span class="hljs-number">0x8b61b60</span>; frame = (<span class="hljs-number">0</span> <span class="hljs-number">0</span>; <span class="hljs-number">82</span> <span class="hljs-number">43.5</span>); opaque = <span class="hljs-literal">NO</span>; autoresize = LM; layer = &lt;<span class="hljs-built_in">CALayer</span>: <span class="hljs-number">0x8b61c90</span>&gt;&gt;
+   |    |    |    | &lt;<span class="hljs-built_in">UILabel</span>: <span class="hljs-number">0x8b61e60</span>; frame = (<span class="hljs-number">15</span> <span class="hljs-number">11</span>; <span class="hljs-number">52</span> <span class="hljs-number">22</span>); text = <span class="hljs-string">'Delete'; clipsToBounds = YES; userInteractionEnabled = NO; layer = &lt;CALayer: 0x8b61f00&gt;&gt;
+   |    | &lt;UITableViewCellContentView: 0xa816500; frame = (0 0; 287 43.5); opaque = NO; gestureRecognizers = &lt;NSArray: 0xa817d40&gt;; layer = &lt;CALayer: 0xa8165b0&gt;&gt;
+   |    |    | &lt;UILabel: 0xa8167a0; frame = (15 0; 270 43.5); text = '</span>Item <span class="hljs-meta">#1'; clipsToBounds = YES; layer = <span class="hljs-meta-string">&lt;CALayer: 0xa816840&gt;</span>&gt;</span>
+   |    | &lt;_UITableViewCellSeparatorView: <span class="hljs-number">0x8a2b6e0</span>; frame = (<span class="hljs-number">97</span> <span class="hljs-number">43.5</span>; <span class="hljs-number">305</span> <span class="hljs-number">0.5</span>); layer = &lt;<span class="hljs-built_in">CALayer</span>: <span class="hljs-number">0x8a2b790</span>&gt;&gt;
+   |    | &lt;<span class="hljs-built_in">UIButton</span>: <span class="hljs-number">0xa8166a0</span>; frame = (<span class="hljs-number">297</span> <span class="hljs-number">16</span>; <span class="hljs-number">8</span> <span class="hljs-number">12.5</span>); opaque = <span class="hljs-literal">NO</span>; userInteractionEnabled = <span class="hljs-literal">NO</span>; layer = &lt;<span class="hljs-built_in">CALayer</span>: <span class="hljs-number">0xa8092b0</span>&gt;&gt;
+   |    |    | &lt;<span class="hljs-built_in">UIImageView</span>: <span class="hljs-number">0xa812d50</span>; frame = (<span class="hljs-number">0</span> <span class="hljs-number">0</span>; <span class="hljs-number">8</span> <span class="hljs-number">12.5</span>); clipsToBounds = <span class="hljs-literal">YES</span>; opaque = <span class="hljs-literal">NO</span>; userInteractionEnabled = <span class="hljs-literal">NO</span>; layer = &lt;<span class="hljs-built_in">CALayer</span>: <span class="hljs-number">0xa8119c0</span>&gt;&gt;
+</pre>
+<p>Woo! There's the delete button! Now, below the content view, is a view of class <code>UITableViewCellDeleteConfirmationView</code>. So that's where the delete button comes in. Notice that the x-value of its frame is 320. This means that it's positioned at the far end of the scroll view. But the delete button doesn't move as you swipe. So Apple must be moving the delete button every time the scroll view is scrolled. That's not particularly important, but it's interesting!</p>
+<p>Back to the cell now.</p>
+<p>You’ve also learned more about how the cell works; namely, that <code>UITableViewCellScrollView</code> — which contains the contentView and the disclosure indicator (and the delete button when it's added) — is clearly doing <i>something</i>. You’ve might guess from its name that it’s a subclass of <code>UIScrollView</code>.</p>
+<p>You can test this assumption by adding the simple <code>for</code> loop below to <code>tableView:cellForRowAtIndexPath:</code>, just below the line that logs the <code>recursiveDescription</code>: </p>
+<pre lang="objc" class="language-objc hljs objectivec"><span class="hljs-keyword">for</span> (<span class="hljs-built_in">UIView</span> *view <span class="hljs-keyword">in</span> cell.subviews) {
+  <span class="hljs-keyword">if</span> ([view isKindOfClass:[<span class="hljs-built_in">UIScrollView</span> <span class="hljs-keyword">class</span>]]) {
+    view.backgroundColor = [<span class="hljs-built_in">UIColor</span> greenColor];
+  }
+}
+</pre>
+<p>Build and run your application again; the green highlighting confirms that this private class is indeed a subclass of <code>UIScrollView</code> since it covers up all of the cell’s purple coloring:</p>
+<p><a href="http://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views/ios-simulator-screen-shot-dec-28-2013-8-53-52-pm" rel="attachment wp-att-62472" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/iOS-Simulator-Screen-shot-Dec-28-2013-8.53.52-PM-213x320.png" alt="Visible Scrollview" width="213" height="320" class="aligncenter size-medium wp-image-62472" srcset="https://koenig-media.raywenderlich.com/uploads/2014/01/iOS-Simulator-Screen-shot-Dec-28-2013-8.53.52-PM-213x320.png 213w, https://koenig-media.raywenderlich.com/uploads/2014/01/iOS-Simulator-Screen-shot-Dec-28-2013-8.53.52-PM-333x500.png 333w, https://koenig-media.raywenderlich.com/uploads/2014/01/iOS-Simulator-Screen-shot-Dec-28-2013-8.53.52-PM.png 640w" sizes="(max-width: 213px) 100vw, 213px"></a></p>
+<p>Recall that your logs of <em>recursiveDescription</em> showed that the <code>UITableViewCellScrollView</code>’s frame was exactly the same size as that of the cell itself. </p>
+<p>But what exactly is this view doing? Keep dragging the cell over to the side and you’ll see that the scroll view powers the “springy” action when you drag the cell and release it, like so: </p>
+<p><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/swipeable-demo.gif" alt="swipeable-demo" width="400" height="561" class="aligncenter size-full wp-image-64053"></p>
+<p>One last thing to be aware of before you start building your own custom <code>UITableViewCell</code> subclass comes straight out of the <a href="https://developer.apple.com/library/ios/documentation/uikit/reference/UITableViewCell_Class/Reference/Reference.html" title="UITVC Class Reference" target="_blank" sl-processed="1"><em>UITableViewCell</em> Class Reference</a>: </p>
+<blockquote><p>"If you want to go beyond the predefined styles, you can add subviews to the <code>contentView</code> property of the cell. When adding subviews, you are responsible for positioning those views and setting their content yourself."</p></blockquote>
+<p>In plain English, this means that any custom mods to <code>UITableViewCell</code> must be performed in the <code>contentView</code>. You can’t simply add your own views below the cell itself — you have to add them to the cell’s <code>contentView</code>.</p>
+<p>This means you're going to have to cook up your own solution to add custom buttons. But never fear, you can quite easily replicate the solution Apple use!</p>
+<h2>A List Of Ingredients for a Swipeable Table View Cell</h2>
+<p>So what does this mean for you? Well, at this point you have a list of obvious ingredients for cooking up a <code>UITableViewCell</code> subclass with your own custom buttons. </p>
+<p>Going in reverse z-order with the items at the “bottom” of the view stack first, you have the following:</p>
+<ol>
+<li>The <code>contentView</code> as your base view, since it's required that you add subviews to this view.</li>
+<li>Any <code>UIButtons</code> you want to display after the user swipes.</li>
+<li>A container view above the buttons to hold all of your content.</li>
+<li>Either a <code>UIScrollView</code> to hold your container view, like Apple use, or you could use a <code>UIPanGestureRecognizer</code>. This can also handle the swipes to reveal/hide the buttons. You'll take the latter approach in your project.</li>
+<li>Finally, the views with your actual content.</li>
+</ol>
+<p>There’s one ingredient that may not be as obvious: you have to ensure the existing <code>UIPanGestureRecognizer</code> — which lets you swipe to show the delete button —  is disabled. Otherwise that gesture recognizer will collide with the custom one you’re adding to your project.</p>
+<p>The good news is that disabling the default swipe is pretty simple. </p>
+<p>Open <em>MasterViewController.m</em>. Modify <code>tableView:canEditRowAtIndexPath:</code> to always return <code>NO</code> as follows:</p>
+<pre lang="objc" class="language-objc hljs objectivec">- (<span class="hljs-built_in">BOOL</span>)tableView:(<span class="hljs-built_in">UITableView</span> *)tableView canEditRowAtIndexPath:(<span class="hljs-built_in">NSIndexPath</span> *)indexPath {
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">NO</span>;
+}
+</pre>
+<p>Build and run your application; swipe one of the items and you’ll find that you can no longer swipe to delete.</p>
+<p>To keep it simple, you'll walk through this example with two buttons, but these same techniques will work with one button, or more than two buttons — though be warned you may need to add a few tweaks not covered in this article if you add so many buttons that you’d have to slide the entire cell out of view to see them all.</p>
+<h2>Creating the Custom Cell</h2>
+<p>You can see from the basic list of views and gesture recognizers that there’s an awful lot going on in the table view cell. You’ll want to create your own custom <code>UITableViewCell</code> subclass to keep all the logic in one place. </p>
+<p>Go to <em>File\New\ File…</em> and select <em>iOS\Cocoa Touch\Objective-C class</em>. Name the new class <em>SwipeableCell</em> and make it a subclass of <em>UITableViewCell</em>, like so:</p>
+<p><a href="http://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views/screen-shot-2013-12-29-at-3-13-23-pm" rel="attachment wp-att-62484" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/Screen-Shot-2013-12-29-at-3.13.23-PM-475x320.jpg" alt="Creating custom cell" width="475" height="320" class="aligncenter size-medium wp-image-62484" srcset="https://koenig-media.raywenderlich.com/uploads/2014/01/Screen-Shot-2013-12-29-at-3.13.23-PM-475x320.jpg 475w, https://koenig-media.raywenderlich.com/uploads/2014/01/Screen-Shot-2013-12-29-at-3.13.23-PM-700x471.jpg 700w, https://koenig-media.raywenderlich.com/uploads/2014/01/Screen-Shot-2013-12-29-at-3.13.23-PM.jpg 1464w" sizes="(max-width: 475px) 100vw, 475px"></a></p>
+<p>Set up the following class extension and <code>IBOutlets</code> in <em>SwipeableCell.m</em>, just below the <code>#import</code> statement and above the <code>@implementation</code> statement:</p>
+<pre lang="objc" class="language-objc hljs objectivec"><span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">SwipeableCell</span>()</span>
+
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">weak</span>) <span class="hljs-keyword">IBOutlet</span> <span class="hljs-built_in">UIButton</span> *button1;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">weak</span>) <span class="hljs-keyword">IBOutlet</span> <span class="hljs-built_in">UIButton</span> *button2;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">weak</span>) <span class="hljs-keyword">IBOutlet</span> <span class="hljs-built_in">UIView</span> *myContentView;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">weak</span>) <span class="hljs-keyword">IBOutlet</span> <span class="hljs-built_in">UILabel</span> *myTextLabel;
+
+<span class="hljs-keyword">@end</span>
+</pre>
+<p>Next, go into your storyboard and select the <em>UITableViewCell</em> prototype, as shown below: </p>
+<p><a href="http://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views/screen-shot-2013-12-29-at-3-29-24-pm" rel="attachment wp-att-62485" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/Screen-Shot-2013-12-29-at-3.29.24-PM-367x320.jpg" alt="Select Table View Cell" width="367" height="320" class="aligncenter size-medium wp-image-62485" srcset="https://koenig-media.raywenderlich.com/uploads/2014/01/Screen-Shot-2013-12-29-at-3.29.24-PM-367x320.jpg 367w, https://koenig-media.raywenderlich.com/uploads/2014/01/Screen-Shot-2013-12-29-at-3.29.24-PM.jpg 544w" sizes="(max-width: 367px) 100vw, 367px"></a></p>
+<p>Open the Identity Inspector, then change the Custom Class to <em>SwipeableCell</em>, like so:</p>
+<p><a href="http://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views/screen-shot-2013-12-29-at-3-29-11-pm" rel="attachment wp-att-62486" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/Screen-Shot-2013-12-29-at-3.29.11-PM-252x320.jpg" alt="Change Custom Class" width="252" height="320" class="aligncenter size-medium wp-image-62486" srcset="https://koenig-media.raywenderlich.com/uploads/2014/01/Screen-Shot-2013-12-29-at-3.29.11-PM-252x320.jpg 252w, https://koenig-media.raywenderlich.com/uploads/2014/01/Screen-Shot-2013-12-29-at-3.29.11-PM-393x500.jpg 393w, https://koenig-media.raywenderlich.com/uploads/2014/01/Screen-Shot-2013-12-29-at-3.29.11-PM.jpg 520w" sizes="(max-width: 252px) 100vw, 252px"></a> </p>
+<p>The name of the <em>UITableViewCell</em> prototype now appears as “Swipeable Cell” in the Document Outline on the left. Right-click on the item that says <em> Swipeable Cell - Cell</em>, you'll see the list of <em>IBOutlets</em> you set up above:</p>
+<p><a href="http://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views/screen-shot-2013-12-29-at-3-36-48-pm" rel="attachment wp-att-62487" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/Screen-Shot-2013-12-29-at-3.36.48-PM-420x320.jpg" alt="New Name and Outlets" width="420" height="320" class="aligncenter size-medium wp-image-62487" srcset="https://koenig-media.raywenderlich.com/uploads/2014/01/Screen-Shot-2013-12-29-at-3.36.48-PM-420x320.jpg 420w, https://koenig-media.raywenderlich.com/uploads/2014/01/Screen-Shot-2013-12-29-at-3.36.48-PM-656x500.jpg 656w, https://koenig-media.raywenderlich.com/uploads/2014/01/Screen-Shot-2013-12-29-at-3.36.48-PM.jpg 1090w" sizes="(max-width: 420px) 100vw, 420px"></a></p>
+<p>First, you’ll need to change a couple things in the Attributes Inspector to customize the view. Set the Style to <em>Custom</em>, the Selection to <em>None</em>, and the Accessory to <em>None</em>, as shown in the screenshot below:</p>
+<p><a href="http://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views/screen-shot-2014-01-05-at-5-37-22-pm" rel="attachment wp-att-62488" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/Screen-Shot-2014-01-05-at-5.37.22-PM-282x320.jpg" alt="Reset Cell Items" width="282" height="320" class="aligncenter size-medium wp-image-62488" srcset="https://koenig-media.raywenderlich.com/uploads/2014/01/Screen-Shot-2014-01-05-at-5.37.22-PM-282x320.jpg 282w, https://koenig-media.raywenderlich.com/uploads/2014/01/Screen-Shot-2014-01-05-at-5.37.22-PM-441x500.jpg 441w, https://koenig-media.raywenderlich.com/uploads/2014/01/Screen-Shot-2014-01-05-at-5.37.22-PM.jpg 502w" sizes="(max-width: 282px) 100vw, 282px"></a></p>
+<p>Next, drag two Buttons into the cell's content view. Set each button's background color in the View section of the Attributes Inspector to some distinctive color and set each button's text color to something legible so you can see the buttons clearly.</p>
+<p>Pin the first button to the right side, top, and bottom of the <em>contentView</em>. Pin the second button to the left edge of the first button, and to the top and bottom of the <em>contentView</em>. When you’re done, the cell should look something like this, although your colors may differ: </p>
+<p><a href="http://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views/screen-shot-2013-12-29-at-4-08-29-pm" rel="attachment wp-att-62489" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/Screen-Shot-2013-12-29-at-4.08.29-PM-480x269.jpg" alt="Buttons Added to Prototype Cell" width="480" height="269" class="aligncenter size-medium wp-image-62489" srcset="https://koenig-media.raywenderlich.com/uploads/2014/01/Screen-Shot-2013-12-29-at-4.08.29-PM-480x269.jpg 480w, https://koenig-media.raywenderlich.com/uploads/2014/01/Screen-Shot-2013-12-29-at-4.08.29-PM.jpg 674w" sizes="(max-width: 480px) 100vw, 480px"></a></p>
+<p>Next, hook up each of your buttons to the appropriate outlets. Right-click the swipeable cell to open up its outlets, then drag from the <em>button1</em> outlet to the right button, and <em>button2</em> to the left button, as such:</p>
+<p><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/swipeable-button1.png" alt="swipeable-button1" width="639" height="410" class="aligncenter size-full wp-image-64046" srcset="https://koenig-media.raywenderlich.com/uploads/2014/01/swipeable-button1.png 639w, https://koenig-media.raywenderlich.com/uploads/2014/01/swipeable-button1-480x307.png 480w" sizes="(max-width: 639px) 100vw, 639px"></p>
+<p>You need to create a method to handle taps on each of these buttons. </p>
+<p>Open <em>SwipeableCell.m</em> and add the following method:</p>
+<pre lang="objc" class="language-objc hljs objectivec">- (<span class="hljs-keyword">IBAction</span>)buttonClicked:(<span class="hljs-keyword">id</span>)sender {
+  <span class="hljs-keyword">if</span> (sender == <span class="hljs-keyword">self</span>.button1) {
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"Clicked button 1!"</span>);
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (sender == <span class="hljs-keyword">self</span>.button2) {
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"Clicked button 2!"</span>);
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"Clicked unknown button!"</span>);
+  }
+}
+</pre>
+<p>This handles button taps from either of the buttons and logs it to the console so you can confirm which button was tapped.</p>
+<p>Open the Storyboard again, and hook up the action for both buttons to this new method. Right-click the <em>Swipeable Cell - Cell</em> to bring up its list of outlets and actions. Drag from the <em>buttonClicked:</em> action to your button, like so:</p>
+<p><a href="https://koenig-media.raywenderlich.com/uploads/2014/01/swipeable-buttonClicked.png" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/swipeable-buttonClicked-480x253.png" alt="swipeable-buttonClicked" width="480" height="253" class="aligncenter size-medium wp-image-64049" srcset="https://koenig-media.raywenderlich.com/uploads/2014/01/swipeable-buttonClicked-480x253.png 480w, https://koenig-media.raywenderlich.com/uploads/2014/01/swipeable-buttonClicked-700x369.png 700w, https://koenig-media.raywenderlich.com/uploads/2014/01/swipeable-buttonClicked.png 878w" sizes="(max-width: 480px) 100vw, 480px"></a></p>
+<p>Select <em>Touch Up Inside</em> from the list of events, as shown below:</p>
+<p><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/swipeable-touchupinside.png" alt="swipeable-touchupinside" width="162" height="265" class="aligncenter size-full wp-image-64048"></p>
+<p>Repeat the above steps for the second button. Now tapping on either button calls <code>buttonClicked:</code>.</p>
+<p>Since you're customizing the cell's content view, you can't rely on the built-in text label. Instead, you’ll need to add your own property and method to set the cell's text. </p>
+<p>Open <em>SwipeableCell.h</em> and add the following property: </p>
+<pre lang="objc" class="language-objc hljs objectivec"><span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>) <span class="hljs-built_in">NSString</span> *itemText;
+</pre>
+<p>You’ll be doing more with the <code>itemText</code> property later, but for now, this is all you need.</p>
+<p>Open <em>MasterViewController.m</em> and add the following line to the top:</p>
+<pre lang="objc" class="language-objc hljs objectivec"><span class="hljs-meta">#import <span class="hljs-meta-string">"SwipeableCell.h"</span></span>
+</pre>
+<p>This ensures the class knows about your custom cell subclass.</p>
+<p>Replace the contents of <code>tableView:cellForRowAtIndexPath:</code> with the following:</p>
+<pre lang="objc" class="language-objc hljs objectivec">- (<span class="hljs-built_in">UITableViewCell</span> *)tableView:(<span class="hljs-built_in">UITableView</span> *)tableView cellForRowAtIndexPath:(<span class="hljs-built_in">NSIndexPath</span> *)indexPath {
+  SwipeableCell *cell = [tableView dequeueReusableCellWithIdentifier:<span class="hljs-string">@"Cell"</span> forIndexPath:indexPath];
+
+  <span class="hljs-built_in">NSString</span> *item = _objects[indexPath.row];
+  cell.itemText = item;
+
+  <span class="hljs-keyword">return</span> cell;
+}
+</pre>
+<p>It's now your new cell class being used instead of the standard <code>UITableViewCell</code>.</p>
+<p>Build and run your application; you’ll see something like the following: </p>
+<p><a href="http://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views/ios-simulator-screen-shot-dec-29-2013-4-43-46-pm" rel="attachment wp-att-62490" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/iOS-Simulator-Screen-shot-Dec-29-2013-4.43.46-PM-213x320.png" alt="ALL THE BUTTONS!" width="213" height="320" class="aligncenter size-medium wp-image-62490" srcset="https://koenig-media.raywenderlich.com/uploads/2014/01/iOS-Simulator-Screen-shot-Dec-29-2013-4.43.46-PM-213x320.png 213w, https://koenig-media.raywenderlich.com/uploads/2014/01/iOS-Simulator-Screen-shot-Dec-29-2013-4.43.46-PM-333x500.png 333w, https://koenig-media.raywenderlich.com/uploads/2014/01/iOS-Simulator-Screen-shot-Dec-29-2013-4.43.46-PM.png 640w" sizes="(max-width: 213px) 100vw, 213px"></a></p>
+<h3>Adding a delegate</h3>
+<p>Hooray — your buttons are there! If you tap on each button, you’ll see the appropriate log messages in your console. However, you don't want to have the cell itself take any direct action.  </p>
+<p>For instance, a cell can’t present another view controller or push directly onto the navigation stack. You’ll have to set up a delegate to pass the button tap event back to the view controller to handle that event. </p>
+<p>Open <em>SwipeableCell.h</em> and add the following delegate protocol declaration above the <code>@interface</code> statement:</p>
+<pre lang="objc" class="language-objc hljs objectivec"><span class="hljs-class"><span class="hljs-keyword">@protocol</span> <span class="hljs-title">SwipeableCellDelegate</span> &lt;<span class="hljs-title">NSObject</span>&gt;</span>
+- (<span class="hljs-keyword">void</span>)buttonOneActionForItemText:(<span class="hljs-built_in">NSString</span> *)itemText;
+- (<span class="hljs-keyword">void</span>)buttonTwoActionForItemText:(<span class="hljs-built_in">NSString</span> *)itemText;
+<span class="hljs-keyword">@end</span>
+</pre>
+<p>Add the following delegate property to <em>SwipeableCell.h</em>, just below your property for <code>itemText</code>: </p>
+<pre lang="objc" class="language-objc hljs objectivec"><span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">weak</span>) <span class="hljs-keyword">id</span> &lt;SwipeableCellDelegate&gt; delegate;
+</pre>
+<p>Update <code>buttonClicked:</code> in <em>SwipeableCell.m</em> as shown below:</p>
+<pre lang="objc" class="language-objc hljs objectivec">- (<span class="hljs-keyword">IBAction</span>)buttonClicked:(<span class="hljs-keyword">id</span>)sender {
+  <span class="hljs-keyword">if</span> (sender == <span class="hljs-keyword">self</span>.button1) {
+    [<span class="hljs-keyword">self</span>.delegate buttonOneActionForItemText:<span class="hljs-keyword">self</span>.itemText];
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (sender == <span class="hljs-keyword">self</span>.button2) {
+    [<span class="hljs-keyword">self</span>.delegate buttonTwoActionForItemText:<span class="hljs-keyword">self</span>.itemText];
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"Clicked unknown button!"</span>);
+  }
+}
+</pre>
+<p>This updates the method to call the appropriate delegate methods instead of simply creating an entry in the log.</p>
+<p>Now, open <em>MasterViewController.m</em> and add the following delegate methods to the implementation:</p>
+<pre lang="objc" class="language-objc hljs objectivec"><span class="hljs-meta">#pragma mark - SwipeableCellDelegate</span>
+- (<span class="hljs-keyword">void</span>)buttonOneActionForItemText:(<span class="hljs-built_in">NSString</span> *)itemText {
+  <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"In the delegate, Clicked button one for %@"</span>, itemText);
+}
+
+- (<span class="hljs-keyword">void</span>)buttonTwoActionForItemText:(<span class="hljs-built_in">NSString</span> *)itemText {
+  <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"In the delegate, Clicked button two for %@"</span>, itemText);
+}
+</pre>
+<p>These methods will simply log to the console to ensure everything is passing through properly.</p>
+<p>Next, add the following protocol conformance declaration to the class extension at the top of <em>MasterViewController.m</em>:</p>
+<pre lang="objc" class="language-objc hljs objectivec"><span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">MasterViewController</span> () &lt;<span class="hljs-title">SwipeableCellDelegate</span>&gt; </span>{
+  <span class="hljs-built_in">NSMutableArray</span> *_objects;
+}
+<span class="hljs-keyword">@end</span>
+</pre>
+<p>This simply indicates that this class conforms to the <code>SwipeableCellDelegate</code> protocol.</p>
+<p>Finally, you need to set this view controller as the cell's delegate. </p>
+<p>Add the following line to <code>tableView:cellForRowAtIndexPath:</code> just before the final return statement:</p>
+<pre lang="objc" class="language-objc hljs objectivec">cell.delegate = <span class="hljs-keyword">self</span>;
+</pre>
+<p>Build and run your application; you’ll see the appropriate “in the delegate” messages firing off when you tap on the buttons.</p>
+<h3>Adding actions to the buttons</h3>
+<p>If you're happy with the log messages, feel free to skip to the next section. However, if you’d like something a little more tangible, you can add some handling to show the included <em>DetailViewController</em> when one of the delegate methods is called. </p>
+<p>Add the following two methods to <em>MasterViewController.m</em>:</p>
+<pre lang="objc" class="language-objc hljs objectivec">- (<span class="hljs-keyword">void</span>)showDetailWithText:(<span class="hljs-built_in">NSString</span> *)detailText
+{
+  <span class="hljs-comment">//1</span>
+  <span class="hljs-built_in">UIStoryboard</span> *storyboard = [<span class="hljs-built_in">UIStoryboard</span> storyboardWithName:<span class="hljs-string">@"Main"</span> bundle:<span class="hljs-literal">nil</span>];
+  DetailViewController *detail = [storyboard instantiateViewControllerWithIdentifier:<span class="hljs-string">@"DetailViewController"</span>];
+  detail.title = <span class="hljs-string">@"In the delegate!"</span>;
+  detail.detailItem = detailText;
+
+  <span class="hljs-comment">//2</span>
+  <span class="hljs-built_in">UINavigationController</span> *navController = [[<span class="hljs-built_in">UINavigationController</span> alloc] initWithRootViewController:detail];
+
+  <span class="hljs-comment">//3</span>
+  <span class="hljs-built_in">UIBarButtonItem</span> *done = [[<span class="hljs-built_in">UIBarButtonItem</span> alloc] initWithBarButtonSystemItem:<span class="hljs-built_in">UIBarButtonSystemItemDone</span> target:<span class="hljs-keyword">self</span> action:<span class="hljs-keyword">@selector</span>(closeModal)];
+  [detail.navigationItem setRightBarButtonItem:done];
+
+  [<span class="hljs-keyword">self</span> presentViewController:navController animated:<span class="hljs-literal">YES</span> completion:<span class="hljs-literal">nil</span>];
+}
+
+<span class="hljs-comment">//4</span>
+- (<span class="hljs-keyword">void</span>)closeModal
+{
+  [<span class="hljs-keyword">self</span> dismissViewControllerAnimated:<span class="hljs-literal">YES</span> completion:<span class="hljs-literal">nil</span>];
+}
+</pre>
+<p>You perform four actions in the code above: </p>
+<ol>
+<li>Grab the detail view controller out of the storyboard and set its title and detail item for display.</li>
+<li>Set up a <code>UINavigationController</code> to contain the detail view controller and to give you a place to add the close button.</li>
+<li>Add the close button with a target within the <code>MasterViewController</code>.</li>
+<li>Set up the actual target for the close button, which dismisses any modal view controller.</li>
+</ol>
+<p>Next, replace the methods you added earlier with the following implementations:</p>
+<pre lang="objc" class="language-objc hljs objectivec">- (<span class="hljs-keyword">void</span>)buttonOneActionForItemText:(<span class="hljs-built_in">NSString</span> *)itemText
+{
+  [<span class="hljs-keyword">self</span> showDetailWithText:[<span class="hljs-built_in">NSString</span> stringWithFormat:<span class="hljs-string">@"Clicked button one for %@"</span>, itemText]];
+}
+
+- (<span class="hljs-keyword">void</span>)buttonTwoActionForItemText:(<span class="hljs-built_in">NSString</span> *)itemText
+{
+  [<span class="hljs-keyword">self</span> showDetailWithText:[<span class="hljs-built_in">NSString</span> stringWithFormat:<span class="hljs-string">@"Clicked button two for %@"</span>, itemText]];
+}
+</pre>
+<p>Finally, open <em>Main.storyboard</em> and click on the <em>Detail View Controller</em>. Select the Identity Inspector and set the <em>Storyboard ID</em> to <em>DetailViewController</em> to match the class name, like so:</p>
+<p><a href="http://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views/screen-shot-2013-12-29-at-5-55-54-pm" rel="attachment wp-att-62492" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/Screen-Shot-2013-12-29-at-5.55.54-PM-450x320.jpg" alt="Add Storyboard Identifier" width="450" height="320" class="aligncenter size-medium wp-image-62492" srcset="https://koenig-media.raywenderlich.com/uploads/2014/01/Screen-Shot-2013-12-29-at-5.55.54-PM-450x320.jpg 450w, https://koenig-media.raywenderlich.com/uploads/2014/01/Screen-Shot-2013-12-29-at-5.55.54-PM.jpg 524w" sizes="(max-width: 450px) 100vw, 450px"></a></p>
+<p>If you forget this step, <code>instantiateViewControllerWithIdentifier</code> will crash on an invalid argument exception stating that a view controller with that identifier doesn’t exist.</p>
+<p>Build and run the application; click one of the buttons in a cell, and watch your modal view controller appear, as shown in the following screenshot:</p>
+<p><a href="http://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views/ios-simulator-screen-shot-dec-30-2013-10-27-30-pm" rel="attachment wp-att-62493" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/iOS-Simulator-Screen-shot-Dec-30-2013-10.27.30-PM-213x320.png" alt="View Launched from Delegate" width="213" height="320" class="aligncenter size-medium wp-image-62493" srcset="https://koenig-media.raywenderlich.com/uploads/2014/01/iOS-Simulator-Screen-shot-Dec-30-2013-10.27.30-PM-213x320.png 213w, https://koenig-media.raywenderlich.com/uploads/2014/01/iOS-Simulator-Screen-shot-Dec-30-2013-10.27.30-PM-333x500.png 333w, https://koenig-media.raywenderlich.com/uploads/2014/01/iOS-Simulator-Screen-shot-Dec-30-2013-10.27.30-PM.png 640w" sizes="(max-width: 213px) 100vw, 213px"></a></p>
+<h2>Adding the Top Views And The Swipe Action</h2>
+<p>Now that you have the bottom part of the view working, it’s time to get the top portion up and running.</p>
+<p>Open <em>Main.storyboard</em> and drag a <code>UIView</code> into your <em>SwipeableTableCell</em>. The view should take up the entire height and width of the cell and cover your buttons so you won't able to see them until you get the swipe working. </p>
+<p>If you want to be precise, you can open the Size Inspector and set the view's width and height to 320 and 43, respectively:</p>
+<p><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/swipeable-320-43-480x305.png" alt="swipeable-320-43" width="480" height="305" class="aligncenter size-medium wp-image-64050" srcset="https://koenig-media.raywenderlich.com/uploads/2014/01/swipeable-320-43-480x305.png 480w, https://koenig-media.raywenderlich.com/uploads/2014/01/swipeable-320-43.png 615w" sizes="(max-width: 480px) 100vw, 480px"></p>
+<p>You'll also need a constraint to pin the view to the edges of the content view. Select the view and click the <em>Pin</em> button. Select all four spacing constraints and set their values to 0 as shown below:</p>
+<p><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/swipeable-constraint-286x320.png" alt="swipeable-constraint" width="286" height="320" class="aligncenter size-medium wp-image-64051" srcset="https://koenig-media.raywenderlich.com/uploads/2014/01/swipeable-constraint-286x320.png 286w, https://koenig-media.raywenderlich.com/uploads/2014/01/swipeable-constraint.png 348w" sizes="(max-width: 286px) 100vw, 286px"></p>
+<p>Hook this new view up to its outlet by following the same steps as before: right-click the swipe able cell in the navigator on the left and drag from the <em>myContentView</em> outlet to the new view.</p>
+<p>Next, drag a <em>UILabel</em> into the view; pin it 20 points from the left side of the view and center it vertically. Hook this label up to the <em>myTextLabel</em> outlet.</p>
+<p>Build and run your application; your cells are looking somewhat normal again:</p>
+<p><a href="http://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views/ios-simulator-screen-shot-jan-1-2014-3-44-29-pm" rel="attachment wp-att-62495" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/iOS-Simulator-Screen-shot-Jan-1-2014-3.44.29-PM-213x320.png" alt="Back to cells" width="213" height="320" class="aligncenter size-medium wp-image-62495" srcset="https://koenig-media.raywenderlich.com/uploads/2014/01/iOS-Simulator-Screen-shot-Jan-1-2014-3.44.29-PM-213x320.png 213w, https://koenig-media.raywenderlich.com/uploads/2014/01/iOS-Simulator-Screen-shot-Jan-1-2014-3.44.29-PM-333x500.png 333w, https://koenig-media.raywenderlich.com/uploads/2014/01/iOS-Simulator-Screen-shot-Jan-1-2014-3.44.29-PM.png 640w" sizes="(max-width: 213px) 100vw, 213px"></a></p>
+<h3>Adding the data</h3>
+<p>But why is the actual cell text data not showing up? That’s because you’re only assigning the <code>itemText</code> to a property rather than doing anything that affects <code>myTextLabel</code>. </p>
+<p>Open <em>SwipeableCell.m</em> and add the following method:</p>
+<pre lang="objc" class="language-objc hljs objectivec">- (<span class="hljs-keyword">void</span>)setItemText:(<span class="hljs-built_in">NSString</span> *)itemText {
+  <span class="hljs-comment">//Update the instance variable</span>
+  _itemText = itemText;
+    
+  <span class="hljs-comment">//Set the text to the custom label.</span>
+  <span class="hljs-keyword">self</span>.myTextLabel.text = _itemText;
+}
+</pre>
+<p>This is an override of the default setter for the <code>itemText</code> property.</p>
+<p>Aside from updating the backing instance variable, the above method also updates the visible label.</p>
+<p>Finally, to make the result of the next few steps a little easier to see, you’re going to make the title of the item a little longer so that some text will still be visible when the cell is swiped. </p>
+<p>Head back to <em>MasterViewController.m</em> and update the following line in <code>viewDidLoad</code> where the item titles are generated:</p>
+<pre lang="objc" class="language-objc hljs objectivec"><span class="hljs-built_in">NSString</span> *item = [<span class="hljs-built_in">NSString</span> stringWithFormat:<span class="hljs-string">@"Longer Title Item #%d"</span>, i];
+</pre>
+<p>Build and run your application; you can now see the appropriate item titles as shown below: </p>
+<p><a href="http://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views/ios-simulator-screen-shot-jan-1-2014-4-12-32-pm" rel="attachment wp-att-62496" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/iOS-Simulator-Screen-shot-Jan-1-2014-4.12.32-PM-213x320.png" alt="Longer Item Titles displayed in custom label" width="213" height="320" class="aligncenter size-medium wp-image-62496" srcset="https://koenig-media.raywenderlich.com/uploads/2014/01/iOS-Simulator-Screen-shot-Jan-1-2014-4.12.32-PM-213x320.png 213w, https://koenig-media.raywenderlich.com/uploads/2014/01/iOS-Simulator-Screen-shot-Jan-1-2014-4.12.32-PM-333x500.png 333w, https://koenig-media.raywenderlich.com/uploads/2014/01/iOS-Simulator-Screen-shot-Jan-1-2014-4.12.32-PM.png 640w" sizes="(max-width: 213px) 100vw, 213px"></a></p>
+<h3>Gesture recognisers - go!</h3>
+<p>Now here comes the “fun” part — building up the math, the constraints, and the gesture recognizers that facilitate the swiping action. </p>
+<p>First, add the following properties to your <code>SwipeableCell</code> class extension at the top of <em>SwipeableCell.m</em>:</p>
+<pre lang="objc" class="language-objc hljs objectivec"><span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>) <span class="hljs-built_in">UIPanGestureRecognizer</span> *panRecognizer;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">assign</span>) <span class="hljs-built_in">CGPoint</span> panStartPoint;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">assign</span>) <span class="hljs-built_in">CGFloat</span> startingRightLayoutConstraintConstant;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">weak</span>) <span class="hljs-keyword">IBOutlet</span> <span class="hljs-built_in">NSLayoutConstraint</span> *contentViewRightConstraint;
+<span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">weak</span>) <span class="hljs-keyword">IBOutlet</span> <span class="hljs-built_in">NSLayoutConstraint</span> *contentViewLeftConstraint;
+</pre>
+<p>The short version of what you’re going to be doing is to track a pan gesture and then adjust the left and right constraints on your view based on a) how far the user has panned the cell and b) where the cell was when it started. </p>
+<p>In order to do that, you’ll first need to hook up the IBOutlets for the left and right constraints of the <em>myContentView</em> view. These constraints pin that view to the cell’s <em>contentView</em>. </p>
+<p>You can figure out which constraints these are by flipping open the list of constraints and examining which ones light up as you go through the list until you find the appropriate ones. In this case, it's the constraint between the right side of <em>myContentView</em> and the main <em>contentView</em> as shown below: </p>
+<p><a href="http://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views/screen-shot-2014-01-01-at-5-19-25-pm" rel="attachment wp-att-62498" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/Screen-Shot-2014-01-01-at-5.19.25-PM-480x316.jpg" alt="Highlighting Constraints" width="480" height="316" class="aligncenter size-medium wp-image-62498" srcset="https://koenig-media.raywenderlich.com/uploads/2014/01/Screen-Shot-2014-01-01-at-5.19.25-PM-480x316.jpg 480w, https://koenig-media.raywenderlich.com/uploads/2014/01/Screen-Shot-2014-01-01-at-5.19.25-PM-700x461.jpg 700w" sizes="(max-width: 480px) 100vw, 480px"></a></p>
+<p>Once you’ve located the appropriate constraint, hook up the appropriate outlet — in this case, it's the <em>contentViewRightConstraint</em>, as such:</p>
+<p><a href="http://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views/screen-shot-2014-01-01-at-5-19-12-pm" rel="attachment wp-att-62499" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/Screen-Shot-2014-01-01-at-5.19.12-PM-480x272.jpg" alt="Hook Up Constraint to IBOutlet" width="480" height="272" class="aligncenter size-medium wp-image-62499" srcset="https://koenig-media.raywenderlich.com/uploads/2014/01/Screen-Shot-2014-01-01-at-5.19.12-PM-480x272.jpg 480w, https://koenig-media.raywenderlich.com/uploads/2014/01/Screen-Shot-2014-01-01-at-5.19.12-PM-700x397.jpg 700w" sizes="(max-width: 480px) 100vw, 480px"></a></p>
+<p>Follow the same steps to hook up the <em>contentViewLeftConstraint</em> to the constraint between the left side of <em>myContentView</em> and the main <em>contentView</em>. </p>
+<p>Next, open <em>SwipeableCell.m</em> and modify the <code>@interface</code> statement for the class extension category so that it conforms to the <code>UIGestureRecognizerDelegate</code> protocol as follows: </p>
+<pre lang="objc" class="language-objc hljs objectivec"><span class="hljs-class"><span class="hljs-keyword">@interface</span> <span class="hljs-title">SwipeableCell</span>() &lt;<span class="hljs-title">UIGestureRecognizerDelegate</span>&gt;</span>
+</pre>
+<p>Then, still in <em>SwipeableCell.m</em>, add the following method:</p>
+<pre lang="objc" class="language-objc hljs objectivec">- (<span class="hljs-keyword">void</span>)awakeFromNib {
+  [<span class="hljs-keyword">super</span> awakeFromNib];
+    
+  <span class="hljs-keyword">self</span>.panRecognizer = [[<span class="hljs-built_in">UIPanGestureRecognizer</span> alloc] initWithTarget:<span class="hljs-keyword">self</span> action:<span class="hljs-keyword">@selector</span>(panThisCell:)];
+  <span class="hljs-keyword">self</span>.panRecognizer.delegate = <span class="hljs-keyword">self</span>;
+  [<span class="hljs-keyword">self</span>.myContentView addGestureRecognizer:<span class="hljs-keyword">self</span>.panRecognizer];
+}
+</pre>
+<p>This sets up the pan gesture recognizer and adds it to the cell.</p>
+<p>Also add the following method:</p>
+<pre lang="objc" class="language-objc hljs objectivec">- (<span class="hljs-keyword">void</span>)panThisCell:(<span class="hljs-built_in">UIPanGestureRecognizer</span> *)recognizer {
+  <span class="hljs-keyword">switch</span> (recognizer.state) {
+    <span class="hljs-keyword">case</span> <span class="hljs-built_in">UIGestureRecognizerStateBegan</span>:
+      <span class="hljs-keyword">self</span>.panStartPoint = [recognizer translationInView:<span class="hljs-keyword">self</span>.myContentView];
+      <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"Pan Began at %@"</span>, <span class="hljs-built_in">NSStringFromCGPoint</span>(<span class="hljs-keyword">self</span>.panStartPoint));
+      <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-built_in">UIGestureRecognizerStateChanged</span>: {
+      <span class="hljs-built_in">CGPoint</span> currentPoint = [recognizer translationInView:<span class="hljs-keyword">self</span>.myContentView];
+      <span class="hljs-built_in">CGFloat</span> deltaX = currentPoint.x - <span class="hljs-keyword">self</span>.panStartPoint.x;
+      <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"Pan Moved %f"</span>, deltaX);
+    }
+      <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-built_in">UIGestureRecognizerStateEnded</span>:
+      <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"Pan Ended"</span>);
+      <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-built_in">UIGestureRecognizerStateCancelled</span>:
+      <span class="hljs-built_in">NSLog</span>(<span class="hljs-string">@"Pan Cancelled"</span>);
+      <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">default</span>:
+      <span class="hljs-keyword">break</span>;
+  }
+}
+</pre>
+<p>This is the method that's called when the pan gesture recogniser fires. For now, it simply logs the pan gesture details to the console.</p>
+<p>Build and run your application; drag your finger across the cell and you’ll see all the logs firing with the movement, like so: </p>
+<p><a href="http://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views/screen-shot-2014-01-01-at-7-08-21-pm" rel="attachment wp-att-62500" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/Screen-Shot-2014-01-01-at-7.08.21-PM-195x320.jpg" alt="Pan Logs" width="195" height="320" class="aligncenter size-medium wp-image-62500" srcset="https://koenig-media.raywenderlich.com/uploads/2014/01/Screen-Shot-2014-01-01-at-7.08.21-PM-195x320.jpg 195w, https://koenig-media.raywenderlich.com/uploads/2014/01/Screen-Shot-2014-01-01-at-7.08.21-PM-304x500.jpg 304w, https://koenig-media.raywenderlich.com/uploads/2014/01/Screen-Shot-2014-01-01-at-7.08.21-PM.jpg 306w" sizes="(max-width: 195px) 100vw, 195px"></a></p>
+<p>You’ll see positive numbers if you swipe to the right of your initial touch point, and negative numbers if you swipe to the left of your initial touch point. These numbers will be used to adjust the constraints of <code>myContentView</code>.</p>
+<h3>Moving those constraints</h3>
+<p>Essentially, you need to push <code>myContentView</code> over to the left by adjusting the left and right constraints that pin it to the cell’s <code>contentView</code>. The right constraint will take a positive value, and the left constraint will take an equal but negative value. </p>
+<p>For instance, if <code>myContentView</code> needs to be moved 5 points to the left, then the right constraint will take a value of 5 and the left constraint will take a value of -5. This slides the entire view over to the left by 5 points without changing its width.</p>
+<p>Sounds easy — but there's a lot of moving parts to watch out for. You have to handle a whole lot of things very differently depending on whether the cell is already open or not, and what direction the user is panning.</p>
+<p>You also need to know how far the cell is allowed to slide open. To do this, you’ll have to calculate the width of the area covered by the buttons. The easiest way is to subtract the minimum X position of the leftmost button from the full width of the view. </p>
+<p>To clarify, here's a sneak peek ahead to more clearly illustrate the dimensions you'll need to be concerned with:</p>
+<p><a href="http://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views/width-min-x" rel="attachment wp-att-62501" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/width-min-x-480x254.png" alt="Minimum x of button 2" width="480" height="254" class="aligncenter size-medium wp-image-62501" srcset="https://koenig-media.raywenderlich.com/uploads/2014/01/width-min-x-480x254.png 480w, https://koenig-media.raywenderlich.com/uploads/2014/01/width-min-x.png 640w" sizes="(max-width: 480px) 100vw, 480px"></a></p>
+<p>Luckily, thanks to the <a href="https://developer.apple.com/library/mac/documentation/graphicsimaging/reference/CGGeometry/Reference/reference.html" title="CGGeometry" target="_blank" sl-processed="1"><em>CGRect</em> CGGeometry functions</a>, this is super-easy to translate into code. </p>
+<p>Add the following method to <em>SwipeableCell.m</em>:</p>
+<pre lang="objc" class="language-objc hljs objectivec">- (<span class="hljs-built_in">CGFloat</span>)buttonTotalWidth {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">CGRectGetWidth</span>(<span class="hljs-keyword">self</span>.frame) - <span class="hljs-built_in">CGRectGetMinX</span>(<span class="hljs-keyword">self</span>.button2.frame);
+}
+</pre>
+<p>Add the following two skeleton methods to <em>SwipeableCell.m</em>:</p>
+<pre lang="objc" class="language-objc hljs objectivec">- (<span class="hljs-keyword">void</span>)resetConstraintContstantsToZero:(<span class="hljs-built_in">BOOL</span>)animated notifyDelegateDidClose:(<span class="hljs-built_in">BOOL</span>)endEditing
+{
+	<span class="hljs-comment">//<span class="hljs-doctag">TODO:</span> Build.</span>
+}
+
+- (<span class="hljs-keyword">void</span>)setConstraintsToShowAllButtons:(<span class="hljs-built_in">BOOL</span>)animated notifyDelegateDidOpen:(<span class="hljs-built_in">BOOL</span>)notifyDelegate
+{
+	<span class="hljs-comment">//<span class="hljs-doctag">TODO:</span> Build</span>
+}
+</pre>
+<p>These two skeleton methods — once you flesh them out — will snap the cell open and snap the cell closed. You’ll come back to these in a bit once you’ve added more handling in the pan gesture recognizer.</p>
+<p>Replace the <code>UIGestureRecognizerStateBegan</code> case of <code>panThisCell:</code> with the following code:</p>
+<pre lang="objc" class="language-objc hljs objectivec"><span class="hljs-keyword">case</span> <span class="hljs-built_in">UIGestureRecognizerStateBegan</span>:
+  <span class="hljs-keyword">self</span>.panStartPoint = [recognizer translationInView:<span class="hljs-keyword">self</span>.myContentView];	           
+  <span class="hljs-keyword">self</span>.startingRightLayoutConstraintConstant = <span class="hljs-keyword">self</span>.contentViewRightConstraint.constant;
+  <span class="hljs-keyword">break</span>;
+</pre>
+<p>You need to store the initial position of the cell (i.e. the constraint value), to determine whether the cell is opening or closing.</p>
+<p>Next you need to start adding more handling for when the pan gesture recognizer has changed. Still in, <code>panThisCell:</code>, change the <code> UIGestureRecognizerStateChanged</code> case to look like this:</p>
+<pre lang="objc" class="language-objc hljs objectivec"><span class="hljs-keyword">case</span> <span class="hljs-built_in">UIGestureRecognizerStateChanged</span>: { 
+  <span class="hljs-built_in">CGPoint</span> currentPoint = [recognizer translationInView:<span class="hljs-keyword">self</span>.myContentView];
+  <span class="hljs-built_in">CGFloat</span> deltaX = currentPoint.x - <span class="hljs-keyword">self</span>.panStartPoint.x;
+  <span class="hljs-built_in">BOOL</span> panningLeft = <span class="hljs-literal">NO</span>; 
+  <span class="hljs-keyword">if</span> (currentPoint.x &lt; <span class="hljs-keyword">self</span>.panStartPoint.x) {  <span class="hljs-comment">//1</span>
+    panningLeft = <span class="hljs-literal">YES</span>;
+  }
+
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span>.startingRightLayoutConstraintConstant == <span class="hljs-number">0</span>) { <span class="hljs-comment">//2</span>
+    <span class="hljs-comment">//The cell was closed and is now opening</span>
+    <span class="hljs-keyword">if</span> (!panningLeft) {
+      <span class="hljs-built_in">CGFloat</span> constant = MAX(-deltaX, <span class="hljs-number">0</span>); <span class="hljs-comment">//3</span>
+      <span class="hljs-keyword">if</span> (constant == <span class="hljs-number">0</span>) { <span class="hljs-comment">//4</span>
+        [<span class="hljs-keyword">self</span> resetConstraintContstantsToZero:<span class="hljs-literal">YES</span> notifyDelegateDidClose:<span class="hljs-literal">NO</span>];
+      } <span class="hljs-keyword">else</span> { <span class="hljs-comment">//5</span>
+        <span class="hljs-keyword">self</span>.contentViewRightConstraint.constant = constant;
+      }
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-built_in">CGFloat</span> constant = MIN(-deltaX, [<span class="hljs-keyword">self</span> buttonTotalWidth]); <span class="hljs-comment">//6</span>
+      <span class="hljs-keyword">if</span> (constant == [<span class="hljs-keyword">self</span> buttonTotalWidth]) { <span class="hljs-comment">//7</span>
+        [<span class="hljs-keyword">self</span> setConstraintsToShowAllButtons:<span class="hljs-literal">YES</span> notifyDelegateDidOpen:<span class="hljs-literal">NO</span>];
+      } <span class="hljs-keyword">else</span> { <span class="hljs-comment">//8</span>
+        <span class="hljs-keyword">self</span>.contentViewRightConstraint.constant = constant;
+      }
+    }
+  }
+</pre>
+<p>Most of the code above deals with pan gestures starting from cells in their default "closed" state. Here's what's going on in detail:</p>
+<ol>
+<li>Here you determine whether you’re presently panning to the left or the right of your original pan point.</li>
+<li>If the right layout constraint’s constant is equal to zero, that means <code>myContentView</code> is flush up against the <code>contentView</code>. Therefore the cell must be closed at this point and the user is attempting to open it.</li>
+<li>This is the case where the user swipes from left to right to close the cell. Rather than just saying “you can’t do that”, you have to handle the case where the user swipes the cell open a bit then wants to swipe it closed without having lifted their finger to end the gesture.<br>
+&nbsp;<br>
+Since a left-to-right swipe results in a positive value for <code>deltaX</code> and the right-to-left swipe will result in a negative value, you must calculate the constant to set on the right constraint based on the negative of <code>deltaX</code>. The maximum of this and zero is taken, so that the view can't go too far off to the right.</li>
+<li>If the constant is zero, the cell is being closed completely. Fire the method that handles closing — which, as you’ll recall, does nothing at the moment.</li>
+<li>If the constant is not zero, then you should set it to the right-hand side constraint.</li>
+<li>Otherwise, if you’re panning right to left, the user is attempting to open the cell. In this case, the constant will be the lesser of either the negative value of <code>deltaX</code> or the total width of both buttons.</li>
+<li>If the target constant is the total width of both buttons, the cell is being opened to the catch point and you should fire the method that handles opening.</li>
+<li>If the constant is not the total width of both buttons, then set the constant to the right constraint’s constant.</li>
+</ol>
+<p>Phew! That’s a lot of handling…and that’s just for the case where the cell was already closed. You now need the code to handle the case when the cell is partially open when the gesture starts.</p>
+<p>Add the following code directly below the code you just added:</p>
+<pre lang="objc" class="language-objc hljs objectivec">  <span class="hljs-keyword">else</span> {
+    <span class="hljs-comment">//The cell was at least partially open.</span>
+    <span class="hljs-built_in">CGFloat</span> adjustment = <span class="hljs-keyword">self</span>.startingRightLayoutConstraintConstant - deltaX; <span class="hljs-comment">//1</span>
+    <span class="hljs-keyword">if</span> (!panningLeft) {
+      <span class="hljs-built_in">CGFloat</span> constant = MAX(adjustment, <span class="hljs-number">0</span>); <span class="hljs-comment">//2</span>
+      <span class="hljs-keyword">if</span> (constant == <span class="hljs-number">0</span>) { <span class="hljs-comment">//3</span>
+        [<span class="hljs-keyword">self</span> resetConstraintContstantsToZero:<span class="hljs-literal">YES</span> notifyDelegateDidClose:<span class="hljs-literal">NO</span>];
+      } <span class="hljs-keyword">else</span> { <span class="hljs-comment">//4</span>
+        <span class="hljs-keyword">self</span>.contentViewRightConstraint.constant = constant;
+      }
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-built_in">CGFloat</span> constant = MIN(adjustment, [<span class="hljs-keyword">self</span> buttonTotalWidth]); <span class="hljs-comment">//5</span>
+      <span class="hljs-keyword">if</span> (constant == [<span class="hljs-keyword">self</span> buttonTotalWidth]) { <span class="hljs-comment">//6</span>
+        [<span class="hljs-keyword">self</span> setConstraintsToShowAllButtons:<span class="hljs-literal">YES</span> notifyDelegateDidOpen:<span class="hljs-literal">NO</span>];
+      } <span class="hljs-keyword">else</span> { <span class="hljs-comment">//7</span>
+        <span class="hljs-keyword">self</span>.contentViewRightConstraint.constant = constant;
+      }
+    }
+  }
+
+  <span class="hljs-keyword">self</span>.contentViewLeftConstraint.constant = -<span class="hljs-keyword">self</span>.contentViewRightConstraint.constant; <span class="hljs-comment">//8</span>
+}
+    <span class="hljs-keyword">break</span>;
+</pre>
+<p>This is the other side of the outer if-statement. It is therefore the case where the cell is initially open.</p>
+<p>Once again, here's an explanation of the various cases you're handling:</p>
+<ol>
+<li>In this case, you’re not just taking the <code>deltaX</code> - you’re subtracting <code>deltaX</code> from the original position of the rightLayoutConstraint to see how much of an adjustment has been made.</li>
+<li>If the user is panning left to right, you must take the greater of the adjustment or 0. If the adjustment has veered into negative numbers, that means the user has swiped beyond the edge of the cell, and the cell is closed, which leads you to the next case.</li>
+<li>If you’re seeing the constant equal to 0, the cell is closed and you must fire the method that handles closing the cell.</li>
+<li>Otherwise, you set the constant to the right constraint.</li>
+<li>In the case of panning right to left, you’ll want to take the lesser of the adjustment and the total button width. If the adjustment is higher, then the user has swiped too far past the catch point.</li>
+<li>If you’re seeing the constant equal to the total button width, the cell is open, and you must fire the method that handles opening the cell.</li>
+<li>Otherwise, set the constant to the right constraint.</li>
+<li>Now, you’re finally out of both the “cell was closed” and “cell was at least partially open” conditions, and you can do the same thing to the left constraint’s constant in any of these cases: set it to the negative value of the right constraint’s constant. This ensures the width of <code>myContentView</code> stays consistent no matter what you’ve had to do to the right constraint.</li>
+</ol>
+<p>Build and run your application; you can now pan the cell back and forth! It’s not super-smooth, and it stops a little bit before you’d like it to. This is because you haven’t yet implemented the two methods that handle opening and closing the cell.</p>
+<div class="note">
+<p><em>Note:</em> You may also notice that the table view itself doesn’t scroll at the moment. Don’t worry. Once you’ve got the cells sliding open properly, you’ll fix that.</p>
+</div>
+<h3>Snap!</h3>
+<p>Next up, you need to make the cell snap into place as appropriate. You'll notice at the moment that the cell just stops if you let go.</p>
+<p>Before you get into the methods that handle this, you'll need a single method to create an animation.</p>
+<p>Open <em>SwipeableCell.m</em> and add the following method:</p>
+<pre lang="objc" class="language-objc hljs objectivec">- (<span class="hljs-keyword">void</span>)updateConstraintsIfNeeded:(<span class="hljs-built_in">BOOL</span>)animated completion:(<span class="hljs-keyword">void</span> (^)(<span class="hljs-built_in">BOOL</span> finished))completion {
+  <span class="hljs-keyword">float</span> duration = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">if</span> (animated) {
+    duration = <span class="hljs-number">0.1</span>;
+  }
+
+  [<span class="hljs-built_in">UIView</span> animateWithDuration:duration delay:<span class="hljs-number">0</span> options:<span class="hljs-built_in">UIViewAnimationOptionCurveEaseOut</span> animations:^{
+    [<span class="hljs-keyword">self</span> layoutIfNeeded];
+  } completion:completion];
+}
+</pre>
+<div class="note"><em>Note:</em> The duration of 0.1 seconds and the animation curve as an ease-out curve are values that I found looked about right through trial and error. If you find other speeds or animation curves more pleasing to your eye, feel free to change them!</div>
+<p>Next, you’ll need to flesh out the two skeleton methods that open and close the cell. Remember that in the original implementation, there’s a bit of a bounce since it uses a <code>UIScrollView</code> subclass as one of the lowest z-index superviews. </p>
+<p>To make things look right, you'll need to give your cell a bit of a bounce when it hits either edge. You’ll also have to ensure your <code>contentView</code> and <code>myContentView</code> have the same <code>backgroundColor</code> for the optical illusion of the bounce to look as seamless as possible. </p>
+<p>Add the following constant to the top of <em>SwipeableCell.m</em>, just underneath the import statement:</p>
+<pre lang="objc" class="language-objc hljs objectivec"><span class="hljs-keyword">static</span> <span class="hljs-built_in">CGFloat</span> <span class="hljs-keyword">const</span> kBounceValue = <span class="hljs-number">20.0</span>f;
+</pre>
+<p>This constant stores the bounce value to be used in all your bounce animations. </p>
+<p>Update <code>setConstraintsToShowAllButtons:notifyDelegateDidOpen:</code> as follows:</p>
+<pre lang="objc" class="language-objc hljs objectivec">- (<span class="hljs-keyword">void</span>)setConstraintsToShowAllButtons:(<span class="hljs-built_in">BOOL</span>)animated notifyDelegateDidOpen:(<span class="hljs-built_in">BOOL</span>)notifyDelegate {
+  <span class="hljs-comment">//<span class="hljs-doctag">TODO:</span> Notify delegate.</span>
+
+  <span class="hljs-comment">//1</span>
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span>.startingRightLayoutConstraintConstant == [<span class="hljs-keyword">self</span> buttonTotalWidth] &amp;&amp;
+      <span class="hljs-keyword">self</span>.contentViewRightConstraint.constant == [<span class="hljs-keyword">self</span> buttonTotalWidth]) {
+    <span class="hljs-keyword">return</span>;
+  }
+  <span class="hljs-comment">//2</span>
+  <span class="hljs-keyword">self</span>.contentViewLeftConstraint.constant = -[<span class="hljs-keyword">self</span> buttonTotalWidth] - kBounceValue;
+  <span class="hljs-keyword">self</span>.contentViewRightConstraint.constant = [<span class="hljs-keyword">self</span> buttonTotalWidth] + kBounceValue;
+
+  [<span class="hljs-keyword">self</span> updateConstraintsIfNeeded:animated completion:^(<span class="hljs-built_in">BOOL</span> finished) {
+    <span class="hljs-comment">//3</span>
+    <span class="hljs-keyword">self</span>.contentViewLeftConstraint.constant = -[<span class="hljs-keyword">self</span> buttonTotalWidth];
+    <span class="hljs-keyword">self</span>.contentViewRightConstraint.constant = [<span class="hljs-keyword">self</span> buttonTotalWidth];
+
+    [<span class="hljs-keyword">self</span> updateConstraintsIfNeeded:animated completion:^(<span class="hljs-built_in">BOOL</span> finished) {
+      <span class="hljs-comment">//4</span>
+      <span class="hljs-keyword">self</span>.startingRightLayoutConstraintConstant = <span class="hljs-keyword">self</span>.contentViewRightConstraint.constant;
+    }];
+  }];
+}
+</pre>
+<p>This method executes when the cell should open up all the way. Here's what's going on:</p>
+<ol>
+<li>If the cell started open and the constraint is already at the full open value, just bail — otherwise the bouncing action will happen over and over and over again as you continue to swipe past the total button width.</li>
+<li>You initially set the constraints to be the combined value of the total button width and the bounce value, which pulls the cell a bit further to the left than it should go so that it can snap back. Then you fire off the animation for this setting. </li>
+<li>When the first animation completes, fire off a second animation which brings the cell to rest in an open position at exactly the button width.</li>
+<li>When the second animation completes, reset the starting constraint or you’ll see multiple bounces.</li>
+</ol>
+<p>Update <code>resetConstraintContstantsToZero:notifyDelegateDidClose:</code> as follows:</p>
+<pre lang="objc" class="language-objc hljs objectivec">- (<span class="hljs-keyword">void</span>)resetConstraintContstantsToZero:(<span class="hljs-built_in">BOOL</span>)animated notifyDelegateDidClose:(<span class="hljs-built_in">BOOL</span>)notifyDelegate {
+  <span class="hljs-comment">//<span class="hljs-doctag">TODO:</span> Notify delegate.</span>
+
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span>.startingRightLayoutConstraintConstant == <span class="hljs-number">0</span> &amp;&amp;
+      <span class="hljs-keyword">self</span>.contentViewRightConstraint.constant == <span class="hljs-number">0</span>) {
+    <span class="hljs-comment">//Already all the way closed, no bounce necessary</span>
+    <span class="hljs-keyword">return</span>;
+  }
+
+  <span class="hljs-keyword">self</span>.contentViewRightConstraint.constant = -kBounceValue;
+  <span class="hljs-keyword">self</span>.contentViewLeftConstraint.constant = kBounceValue;
+
+  [<span class="hljs-keyword">self</span> updateConstraintsIfNeeded:animated completion:^(<span class="hljs-built_in">BOOL</span> finished) {
+    <span class="hljs-keyword">self</span>.contentViewRightConstraint.constant = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">self</span>.contentViewLeftConstraint.constant = <span class="hljs-number">0</span>;
+
+    [<span class="hljs-keyword">self</span> updateConstraintsIfNeeded:animated completion:^(<span class="hljs-built_in">BOOL</span> finished) {
+      <span class="hljs-keyword">self</span>.startingRightLayoutConstraintConstant = <span class="hljs-keyword">self</span>.contentViewRightConstraint.constant;
+    }];
+  }];
+}
+</pre>
+<p>As you can see, this is similar to <code>setConstraintsToShowAllButtons:notifyDelegateDidOpen:</code>, but the logic closes the cell instead of opening it.</p>
+<p>Build and run your application; drag the cell all the way to its catch points. You'll see the bouncing action when you release the cell.</p>
+<p>However, if you release the cell before either it’s fully open or fully closed, it’ll remain stuck in the middle. Whoops! You’re not handling the two cases of touches ending or being cancelled. </p>
+<p>Find <code>panThisCell:</code> and replace the handling for the <code>UIGestureRecognizerStateEnded</code> case with the following:</p>
+<pre lang="objc" class="language-objc hljs objectivec"><span class="hljs-keyword">case</span> <span class="hljs-built_in">UIGestureRecognizerStateEnded</span>:
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span>.startingRightLayoutConstraintConstant == <span class="hljs-number">0</span>) { <span class="hljs-comment">//1</span>
+    <span class="hljs-comment">//Cell was opening</span>
+    <span class="hljs-built_in">CGFloat</span> halfOfButtonOne = <span class="hljs-built_in">CGRectGetWidth</span>(<span class="hljs-keyword">self</span>.button1.frame) / <span class="hljs-number">2</span>; <span class="hljs-comment">//2</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span>.contentViewRightConstraint.constant &gt;= halfOfButtonOne) { <span class="hljs-comment">//3</span>
+      <span class="hljs-comment">//Open all the way</span>
+      [<span class="hljs-keyword">self</span> setConstraintsToShowAllButtons:<span class="hljs-literal">YES</span> notifyDelegateDidOpen:<span class="hljs-literal">YES</span>];
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-comment">//Re-close</span>
+      [<span class="hljs-keyword">self</span> resetConstraintContstantsToZero:<span class="hljs-literal">YES</span> notifyDelegateDidClose:<span class="hljs-literal">YES</span>];
+    }
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-comment">//Cell was closing</span>
+    <span class="hljs-built_in">CGFloat</span> buttonOnePlusHalfOfButton2 = <span class="hljs-built_in">CGRectGetWidth</span>(<span class="hljs-keyword">self</span>.button1.frame) + (<span class="hljs-built_in">CGRectGetWidth</span>(<span class="hljs-keyword">self</span>.button2.frame) / <span class="hljs-number">2</span>); <span class="hljs-comment">//4</span>
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span>.contentViewRightConstraint.constant &gt;= buttonOnePlusHalfOfButton2) { <span class="hljs-comment">//5</span>
+      <span class="hljs-comment">//Re-open all the way</span>
+      [<span class="hljs-keyword">self</span> setConstraintsToShowAllButtons:<span class="hljs-literal">YES</span> notifyDelegateDidOpen:<span class="hljs-literal">YES</span>];
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-comment">//Close</span>
+      [<span class="hljs-keyword">self</span> resetConstraintContstantsToZero:<span class="hljs-literal">YES</span> notifyDelegateDidClose:<span class="hljs-literal">YES</span>];
+    }
+  }
+  <span class="hljs-keyword">break</span>;
+</pre>
+<p>Here, you’re performing handling based on whether the cell was already open or closed as well as where the cell was when the pan gesture ended. In detail:</p>
+<ol>
+<li>Check whether the cell was already open or closed when the pan started by checking the starting right layout constraint.</li>
+<li>If the cell was closed and you are opening it, you want the point at which the cell automatically slides all the way open to be half of the width of the rightmost button — self.button1. Since you’re measuring against the constraint’s constant, you only need to calculate the actual width of the button itself, not its X position in the view.  </li>
+<li>Next, test if the constraint has been opened past the point where you’d like the cell to open automatically. If it’s past that point, automatically open the cell. If it’s not, automatically close the cell. </li>
+<li>In the case where the cell starts as open, you want the point at which the cell will automatically snap closed to be a point more than halfway past the leftmost button. Add together the widths of any buttons which are not the leftmost button — in this case, just self.button1 — and half the width of the leftmost button — self.button2 — to find the point to check.  </li>
+<li>Test if the constraint has moved past the point where you’d like the cell to close automatically. If it has, close the cell. If it hasn’t, re-open the cell.</li>
+</ol>
+<p>Finally, you’ll need a bit of handling in case the touch event is cancelled. Replace the <code>UIGestureRecognizerStateCancelled</code> case with the following:</p>
+<pre lang="objc" class="language-objc hljs objectivec"><span class="hljs-keyword">case</span> <span class="hljs-built_in">UIGestureRecognizerStateCancelled</span>:
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">self</span>.startingRightLayoutConstraintConstant == <span class="hljs-number">0</span>) {
+    <span class="hljs-comment">//Cell was closed - reset everything to 0</span>
+    [<span class="hljs-keyword">self</span> resetConstraintContstantsToZero:<span class="hljs-literal">YES</span> notifyDelegateDidClose:<span class="hljs-literal">YES</span>];
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-comment">//Cell was open - reset to the open state</span>
+    [<span class="hljs-keyword">self</span> setConstraintsToShowAllButtons:<span class="hljs-literal">YES</span> notifyDelegateDidOpen:<span class="hljs-literal">YES</span>];
+  }
+  <span class="hljs-keyword">break</span>;
+</pre>
+<p>This handling is a bit more straightforward; since the user has cancelled the touch, they don’t want to change the existing state of the cell, so you just need to set everything back the way it was.</p>
+<p>Build and run your application; swipe the cell and you’ll see that the cell snaps open and closed no matter where you lift your finger, as shown below:</p>
+<p><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/swipeable-bounce.gif" alt="swipeable-bounce" width="480" height="588" class="aligncenter size-full wp-image-64044"></p>
+<h2>Playing Nicer With The Table View</h2>
+<p>There's just a few more steps before you’re done! </p>
+<p>First, your <code>UIPanGestureRecognizer</code> can sometimes interfere with the one which handles the scroll action on the <code>UITableView</code>. Since you’ve already set up the cell to be the pan gesture recognizer's <code>UIGestureRecognizerDelegate</code>, you only have to implement one (comically verbosely named) delegate method to make this work.</p>
+<p>Add the following method to <em>SwipeableCell.m</em>: </p>
+<pre lang="objc" class="language-objc hljs objectivec"><span class="hljs-meta">#pragma mark - UIGestureRecognizerDelegate</span>
+- (<span class="hljs-built_in">BOOL</span>)gestureRecognizer:(<span class="hljs-built_in">UIGestureRecognizer</span> *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(<span class="hljs-built_in">UIGestureRecognizer</span> *)otherGestureRecognizer
+{
+   <span class="hljs-keyword">return</span> <span class="hljs-literal">YES</span>;
+}
+</pre>
+<p>This method tells the gesture recognizers that they can both work at the same time. </p>
+<p>Build and run your application; open the first cell and you can now scroll the tableview. </p>
+<p>There's still an issue with cell reuse: rows don't remember their state, so as cells are reused their opened/closed state in the view won't reflect the actions of the user. To see this, open a cell, then scroll the table a bit. You'll notice that one cell always remains open, but it's a different one each time.</p>
+<p>To fix the first half of this issue, add the following method to <em>SwipeableCell.m</em>:</p>
+<pre lang="objc" class="language-objc hljs objectivec">- (<span class="hljs-keyword">void</span>)prepareForReuse {
+  [<span class="hljs-keyword">super</span> prepareForReuse];
+  [<span class="hljs-keyword">self</span> resetConstraintContstantsToZero:<span class="hljs-literal">NO</span> notifyDelegateDidClose:<span class="hljs-literal">NO</span>];
+}
+</pre>
+<p>This method ensures the cell re-closes before it's recycled.</p>
+<p>To solve the second half of the issue, you’re going to add a public method to the cell to facilitate its opening. Then you’ll add some delegate methods to allow <code>MasterViewController</code> to manage which cells are open. </p>
+<p>Open <em>SwipeableCell.h</em>. In the <code>SwipeableCellDelegate</code> protocol declaration, add the following two new methods below the existing methods:</p>
+<pre lang="objc" class="language-objc hljs objectivec">- (<span class="hljs-keyword">void</span>)cellDidOpen:(<span class="hljs-built_in">UITableViewCell</span> *)cell;
+- (<span class="hljs-keyword">void</span>)cellDidClose:(<span class="hljs-built_in">UITableViewCell</span> *)cell;
+</pre>
+<p>These methods will notify the delegate — in your case, the master view controller — that a cell has opened or closed. </p>
+<p>Add the following public method declaration in the <code>@interface</code> declaration for <em>SwipeableCell</em>: </p>
+<pre lang="objc" class="language-objc hljs objectivec">- (<span class="hljs-keyword">void</span>)openCell;
+</pre>
+<p>Next, open <em>SwipeableCell.m</em> and add the following implementation for <code>openCell</code>:</p>
+<pre lang="objc" class="language-objc hljs objectivec">- (<span class="hljs-keyword">void</span>)openCell {
+  [<span class="hljs-keyword">self</span> setConstraintsToShowAllButtons:<span class="hljs-literal">NO</span> notifyDelegateDidOpen:<span class="hljs-literal">NO</span>];
+}
+</pre>
+<p>This method allows the delegate to change the state of a cell.</p>
+<p>Still working in the same file, find <code>resetConstraintsToZero:notifyDelegateDidOpen:</code> and replace the <code>TODO</code> at the top of the method with the following code:</p>
+<pre lang="objc" class="language-objc hljs objectivec"><span class="hljs-keyword">if</span> (notifyDelegate) {
+  [<span class="hljs-keyword">self</span>.delegate cellDidClose:<span class="hljs-keyword">self</span>];
+}
+</pre>
+<p>Next, find <code>setConstraintsToShowAllButtons:notifyDelegateDidClose:</code> and replace the <code>TODO</code> at the top of that method with the following code: </p>
+<pre lang="objc" class="language-objc hljs objectivec"><span class="hljs-keyword">if</span> (notifyDelegate) {
+  [<span class="hljs-keyword">self</span>.delegate cellDidOpen:<span class="hljs-keyword">self</span>];
+}
+</pre>
+<p>These two changes notify the delegate when a swipe gesture has completed and the cell has either opened or closed the menu.</p>
+<p>Add the following property declaration to the top of <em>MasterViewController.m</em>, inside the class extension category:</p>
+<pre lang="objc" class="language-objc hljs objectivec"><span class="hljs-keyword">@property</span> (<span class="hljs-keyword">nonatomic</span>, <span class="hljs-keyword">strong</span>) <span class="hljs-built_in">NSMutableSet</span> *cellsCurrentlyEditing;
+</pre>
+<p>This stores a list of cells that are currently open.</p>
+<p>Add the following code to the end of <code>viewDidLoad</code>:</p>
+<pre lang="objc" class="language-objc hljs objectivec"><span class="hljs-keyword">self</span>.cellsCurrentlyEditing = [<span class="hljs-built_in">NSMutableSet</span> new];
+</pre>
+<p>This initializes the set so you can add things to it later.</p>
+<p>Now add the following methods to the same file:</p>
+<pre lang="objc" class="language-objc hljs objectivec">- (<span class="hljs-keyword">void</span>)cellDidOpen:(<span class="hljs-built_in">UITableViewCell</span> *)cell {
+  <span class="hljs-built_in">NSIndexPath</span> *currentEditingIndexPath = [<span class="hljs-keyword">self</span>.tableView indexPathForCell:cell];
+  [<span class="hljs-keyword">self</span>.cellsCurrentlyEditing addObject:currentEditingIndexPath];
+}
+
+- (<span class="hljs-keyword">void</span>)cellDidClose:(<span class="hljs-built_in">UITableViewCell</span> *)cell {
+  [<span class="hljs-keyword">self</span>.cellsCurrentlyEditing removeObject:[<span class="hljs-keyword">self</span>.tableView indexPathForCell:cell]];
+}
+</pre>
+<p>Note that you’re adding the index paths rather than the cells themselves to the list of cells currently editing. If you added the cell objects directly, then you’d see the same issue where the cells would appear open as they are recycled. With this method, you’ll be able to open the cells at the appropriate index paths instead. </p>
+<p>Finally, add the following lines to <code>tableView:cellForRowAtIndexPath:</code> just before the final return statement:</p>
+<pre lang="objc" class="language-objc hljs objectivec"><span class="hljs-keyword">if</span> ([<span class="hljs-keyword">self</span>.cellsCurrentlyEditing containsObject:indexPath]) {
+  [cell openCell];
+}
+</pre>
+<p>If the current cell's index path is in the set, it should be set to open.</p>
+<p>Build &amp; run the application. That’s it! You now have a table view that scrolls, maintains the open and closed state of cells, and uses delegate methods to launch arbitrary tasks from button taps in any cell.</p>
+<h2>Where To Go From Here</h2><div class="inline-video-ad" id="sub-banner-inline">
+              <div class="inline-video-ad-wrapper">
+                <a href="https://videos.raywenderlich.com/courses" sl-processed="1">
+                  <div class="col-wrapper">
+                    <div class="col">
+                      <img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/video-yeti@2x.png" alt="yeti holding videos">
+                    </div>
+                    <div class="col large-col">
+                      <span>Want to learn even faster? Save time with our <span>video courses</span></span>
+                    </div>
+                  </div>
+                </a>
+
+              </div>
+            </div>
+<p>The final project is available <a href="https://koenig-media.raywenderlich.com/uploads/2014/01/SwipeableTableCell.zip" sl-processed="1">here</a> as a download. I’ll be working with what I’ve developed here to assemble an open source project to make things a bit more flexible - I’ll be posting a link in the forums when it’s ready to roll.</p>
+<p>Any time you're you’re trying to replicate something Apple did without knowing exactly how they did it, you'll find that there are many, many ways to do it. This is just one solution to this problem; however, it’s one of the only solutions I’ve found that doesn’t involve lots of crazy mucking around with nested scroll views and the resulting gesture recognizer collisions that can get extremely hairy to untangle! :]</p>
+<p>A couple of resources that were very helpful in writing this article, but which ultimately took very different approaches, were <a href="http://www.teehanlax.com/blog/reproducing-the-ios-7-mail-apps-interface/" title="Ash Furrow&#39;s swipeable cell" target="_blank" sl-processed="1">Ash Furrow’s article</a> that got the entire ball rolling, and <a href="https://github.com/mbigatti/BMXSwipableCell" title="BMXSwipeableCell" target="_blank" sl-processed="1">Massimiliano Bigatti’s BMXSwipeableCell</a> project which showed just how deep the rabbit hole can go with the <code>UIScrollView</code> approach. </p>
+<p>If you have any suggestions, questions, or related pieces of code, fire away in the comments!</p>
+	
+        </div>
+
+                    
+            <script>
+              jQuery.expr[":"].icontains = jQuery.expr.createPseudo(function (arg) {
+                return function (elem) {
+                  return jQuery(elem).text().toUpperCase().indexOf(arg.toUpperCase()) >= 0;        
+                };
+              });
+              jQuery(document).ready(function() {
+                var finalHeader = jQuery(".content-wrapper h2:icontains('where to go from here')");
+                if (finalHeader.length === 0) {
+                  finalHeader = jQuery(".content-wrapper h2:last");
+                }
+                if (finalHeader.length === 0) {
+                  return;
+                }
+                var inlineAd = jQuery('#sub-banner-inline');
+                finalHeader.after(inlineAd);
+              });
+            </script>
+                <footer>
+          <div class="social-links" style="border-bottom: none;">
+            <ul>
+              <li class="twitter" style="float: left;"><div id="tweetbutton62435m" class="tw_button" style="margin-bottom:10px;"><iframe id="twitter-widget-1" scrolling="no" frameborder="0" allowtransparency="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button" title="Twitter Tweet Button" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/tweet_button.eaf4b750247dd4d0c4a27df474e7e934.en(1).html" style="position: static; visibility: visible; width: 61px; height: 20px;" data-url="https://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views"></iframe></div></li>              <li class="facebook iframe-link" style="position: relative;top: 0px;left: 11px;display: block; float: left;">
+                <iframe src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/like(1).html" allowtransparency="true" frameborder="0" scrolling="no" style="width: 74px; height: 20px;"></iframe>
+              </li>
+            </ul>
+          </div>
+        </footer>
+      </article>
+      <div id="author-information" class="clearfix">
+        <img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/arrow@2x.png" width="40" height="21" id="arrow">
+        			
+          <div class="author-photo">
+            <img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/62467727d6e6b2fc18d0fed04078578b.jpg" alt="" width="100" height="100" class="user-avatar">          </div>
+          <div class="author-meta">
+            <a href="https://www.raywenderlich.com/u/designatednerd" sl-processed="1">Ellen Shapiro</a>            <p class="bio">Ellen Shapiro is the Lead Mobile Developer for <a href="http://www.spothero.com/" sl-processed="1">SpotHero</a> in Chicago, Illinois. She is working in her spare time to help bring <a href="http://justhum.com/" sl-processed="1">Hum</a> to life. She’s also developed several independent applications through her personal company, <a href="http://www.designatednerd.com/" sl-processed="1">Designated Nerd Software</a>. <br>
+<br>
+When she's not writing code, she's usually <a href="https://twitter.com/designatednerd" sl-processed="1">tweeting about it</a>.</p>	
+          </div>
+                      <ul class="follow-links">
+              <li class="twitter"><a href="http://www.twitter.com/designatednerd" target="_block" sl-processed="1">Follow Ellen Shapiro on Twitter</a></li>
+            </ul>
+                </div>
+              <section id="comments">
+                  <div class="excerpt" style="display:none">So you want to make a swipeable table view cell like in Mail.app? This tutorial shows you how without getting bogged down in nested scroll views.</div>
+        <div id="discourse-comments" style="padding:10px 30px 30px 30px"><iframe src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/comments.html" id="discourse-embed-frame" width="100%" frameborder="0" scrolling="no" height="5107px"></iframe></div>
+        ​        <script type="text/javascript">
+            DiscourseEmbed = { discourseUrl: "https://forums.raywenderlich.com/",
+                               discourseEmbedUrl: "https://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views",
+                               discourseUserName: "designatednerd"};
+            (function() {
+              var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+              d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+            })();
+        </script>
+      
+
+        </section>                            
+          </div>
+  </div>
+</div>
+<section id="secondary">
+	<h1 id="other-items-of-interest">Other Items of Interest</h1>
+	<section id="video-subscription-ad" class="rw-module">
+		<a href="https://videos.raywenderlich.com/courses" id="sub-banner-sidebar" sl-processed="1">
+			<div class="coin-holder">
+				<img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/subscription-coin-bg-3@2x.png" class="background-coin" alt="">
+				<img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/subscription-coin-bg-2@2x.png" class="background-coin" alt="">
+				<img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/subscription-coin-bg-1@2x.png" class="background-coin" alt="">
+				<img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/subscription-coin-base@2x.png" alt="">
+			</div>
+			<h2><span>Save time.</span><br>Learn more with our video courses.</h2>
+			<button>Get Started!</button>
+		</a>
+	</section>
+
+	<section id="newsletter-signup" class="rw-module">
+		<header>
+			<h1>raywenderlich.com Weekly</h1>
+		</header>
+		<div>
+			<img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/ia_tilted@2x.png" width="109" height="139">
+			<p>Sign up to receive the latest tutorials from raywenderlich.com each week, and receive a <em>free epic-length tutorial</em> as a bonus!</p>
+			<img src="https://www.raywenderlich.com/62435/make-swipeable-table-view-cell-actions-without-going-nuts-scroll-views">
+			<form novalidate="" target="_blank" class="validate" name="mc-embedded-subscribe-form" id="mc-embedded-subscribe-form" method="post" action="https://raywenderlich.us1.list-manage.com/subscribe/post?u=1bc8e630b1599df629818e59b&amp;id=83b6edc87f">
+				<input type="text" id="mce-NAME" class="required" name="NAME" value="" placeholder="Your full name">
+				<input type="email" id="mce-EMAIL" class="required email" name="EMAIL" value="" placeholder="Your best email">
+				<input type="submit" class="button" id="mc-embedded-subscribe" name="subscribe" value="Sign Up!">
+			</form>
+		</div>
+	</section>
+	<section id="site-ads">
+		<h1>Advertise with Us!</h1>
+      <div id="bsap_1274837" class="bsap bsap_1274837" data-serve="CV7IEKV">
+<style type="text/css">
+div.bsap_1274837{width:100%;display:block;}div.bsap_1274837 a{width:300px;}div.bsap_1274837 a img{padding:0;}div.bsap_1274837 a em{font-style:normal;}div.bsap_1274837 a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0;text-align:center;text-decoration:none;overflow:hidden;float:left;margin-bottom:10px;}
+div.bsap_1274837 img{border:0;clear:right;}
+div.bsap_1274837 a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;}
+div.bsap_1274837 a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;}div.bsap_1274837 a{line-height:100%;}div.bsap_1274837 a.adhere{width:300px;height:250px;line-height:2000%;}html>body div.bsap_1274837 a.adhere{width:298px;height:248px;}div.bsap_1274837 img.s{height:0;width:0;}div.bsap_1274837{line-height:9px;}div.bsap_1274837 .bsap_adhere a{height:19px !important;width:298px !important;font-size:10px;background:#f1f1f1;border:1px solid #e1e1e1;border-top:none;border-radius: 0 0 2px 2px;line-height:16px;}.bsap_backfillframe{border:0;}
+</style>
+<!--INLINE--><script type="text/javascript" id="auto_1" class="ignoreme"><!--
+google_ad_client = "ca-pub-0989544819893200";
+/* Premium Sidebar */
+google_ad_slot = "7993594553";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" id="auto_2" class="ignoreme" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/show_ads.js"></script>
+
+<script data-capture-write="false" type="text/javascript"> if (typeof(_bsap_serving_callback) !== 'undefined') _bsap_serving_callback(20055, 'CV7IEKV', ''); </script>
+<script data-capture-write="false" type="text/javascript"> if (typeof(BSACallback) !== 'undefined') BSACallback(); </script></div>
+      <!-- End BuySellAds Zone Code -->
+
+      <!-- BuySellAds.com Zone Code -->
+      <div id="smallads">
+      	<div id="bsap_1260352" class="bsap bsap_1260352" data-serve="CV7I55V">
+<style type="text/css">
+div.bsap_1260352{width:100%;display:block;}div.bsap_1260352 a{width:125px;}div.bsap_1260352 a img{padding:0;}div.bsap_1260352 a em{font-style:normal;}div.bsap_1260352 a{display:block;font-size:11px;color:#888;font-family:verdana,sans-serif;margin:0;text-align:center;text-decoration:none;overflow:hidden;float:left;}
+div.bsap_1260352 img{border:0;clear:right; }
+div.bsap_1260352 a.adhere{color:#666;font-weight:bold;font-size:12px;border:1px solid #ccc;background:#e7e7e7;text-align:center;}
+div.bsap_1260352 a.adhere:hover{border:1px solid #999;background:#ddd;color:#333;}div.bsap_1260352 a{line-height:100%;}div.bsap_1260352 a.adhere{width:125px;height:125px;line-height:1000%;}html>body div.bsap_1260352 a.adhere{width:123px;height:123px;}div.bsap_1260352 img.s{height:0;width:0;}
+</style>
+<a href="https://srv.buysellads.com/ads/click/x/GTND42QJCKAIVKJLCYSLYKQMC67IE537CTSD4Z3JCWYIC5QMC6YD6KJKC6BI4K77CEYDVK3EHJNCLSIZ" class="ad0 odd " title="Chat and WebRTC Video calls SDK for your iOS apps" id="bsa_7266030" target="_blank" rel="nofollow" sl-processed="1">
+<img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/7266030-1485249161.png" width="125" height="125" alt=""></a><!-- no ad --><!-- no ad --><!-- no ad --><!-- no ad --><!-- no ad -->
+
+<a href="http://www.buysellads.com/buy/detail/45973/zone/1260352?utm_source=site_45973&amp;utm_medium=website&amp;utm_campaign=imagetext&amp;utm_content=zone_1260352" class="adhere" sl-processed="1">Advertise Here</a>
+
+
+<script type="text/javascript" id="auto_1" class="ignoreme"> if (typeof(BSACallback) !== 'undefined') BSACallback(); </script></div>
+      	<div style="clear:both"></div>
+      </div>
+      <div id="razeware_ads">
+      	<a href="http://pragmaconference.com/" target="_blank" class="razewareads" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/PragmaConf16_banner_125x125.png" alt="PragmaConf 2016" width="125" height="125" style="margin-left:15px;"></a>
+        <a href="http://www.fivepackcreative.com/alt-u/" target="_blank" class="razewareads" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/altu.png" alt="Come check out Alt U" width="125" height="125" style="margin-left:15px"></a>
+      </div>
+
+      <!-- End BuySellAds.com Zone Code -->
+      <a href="http://www.raywenderlich.com/advertise" class="rw-button2" id="advertise-with-us" sl-processed="1">Advertise Here!</a>
+	</section>
+
+	<section id="our-books" class="rw-module">
+		<header>
+			<h1>Our Books</h1>
+		</header>
+		<div>
+			<ul class="books">
+				<li>
+					<a href="https://store.raywenderlich.com/products/ios-11-by-tutorials" sl-processed="1">
+						<img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/i11t@2x.png" width="110" height="142">
+					</a>
+				</li>
+				<li>
+					<a href="https://store.raywenderlich.com/products/ios-apprentice" sl-processed="1">
+						<img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/ia1234@2x.png" width="110" height="142">
+					</a>
+				</li>
+				<li>
+					<a href="https://store.raywenderlich.com/products/advanced-apple-debugging-and-reverse-engineering" sl-processed="1">
+						<img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/dbg@2x.png" width="110" height="142">
+					</a>
+				</li>
+				<li>
+					<a href="https://store.raywenderlich.com/products/rxswift" sl-processed="1">
+						<img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/rxs@2x.png" width="110" height="142">
+					</a>
+				</li>
+				<li>
+					<a href="https://store.raywenderlich.com/products/unity-games-by-tutorials" sl-processed="1">
+						<img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/ua@2x.png" width="110" height="142">
+					</a>
+				</li>
+				<li>
+					<a href="https://store.raywenderlich.com/products/swift-apprentice" sl-processed="1">
+						<img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/sa@2x.png" width="110" height="142">
+					</a>
+				</li>
+				<li>
+					<a href="https://store.raywenderlich.com/products/core-data-by-tutorials" sl-processed="1">
+						<img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/cdt@2x.png" width="110" height="142">
+					</a>
+				</li>
+				<li>
+					<a href="https://store.raywenderlich.com/products/tvos-apprentice" sl-processed="1">
+						<img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/tvt@2x.png" width="110" height="142">
+					</a>
+				</li>
+				<li>
+					<a href="https://store.raywenderlich.com/products/watchos-by-tutorials" sl-processed="1">
+						<img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/w2t@2x.png" width="110" height="142">
+					</a>
+				</li>
+				<li>
+					<a href="https://store.raywenderlich.com/products/ios-10-by-tutorials" sl-processed="1">
+						<img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/i10t@2x.png" width="110" height="142">
+					</a>
+				</li>
+				<li>
+					<a href="https://store.raywenderlich.com/products/3d-apple-games-by-tutorials" sl-processed="1">
+						<img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/igt2@2x.png" width="110" height="142">
+					</a>
+				</li>
+				<li>
+					<a href="https://store.raywenderlich.com/products/ios-animations-by-tutorials" sl-processed="1">
+						<img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/iat@2x.png" width="110" height="142">
+					</a>
+				</li>
+				<li>
+					<a href="https://store.raywenderlich.com/products/2d-apple-games-by-tutorials" sl-processed="1">
+						<img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/igt1@2x.png" width="110" height="142">
+					</a>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<section id="tutorial-team" class="rw-module">
+		<header>
+			<h1>Our Team</h1>
+		</header>
+		<div>
+			<h2>Video Team</h2><ul><li><a href="https://www.raywenderlich.com/about#rwenderlich" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/824a6fbb8cbbae317c42ec5a94649f9a.jpg" alt="" width="100" height="100" class="user-avatar"></a></li><li><a href="https://www.raywenderlich.com/about#tcoron" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/8fd1b38cca33b95917aff0824414010b.jpg" alt="" width="100" height="100" class="user-avatar"></a></li><li><a href="https://www.raywenderlich.com/about#sdavies" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/9d11d40a12a8355996db28b33aa61190.jpg" alt="" width="100" height="100" class="user-avatar"></a></li></ul><p>... <a href="https://www.raywenderlich.com/about#abt_video-team" sl-processed="1">20 total!</a></p><h2>iOS Team</h2><ul><li><a href="https://www.raywenderlich.com/about#clanguage" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/6869b6a87617fd9fd3f5351dfc13f5d8.jpg" alt="" width="100" height="100" class="user-avatar"></a></li><li><a href="https://www.raywenderlich.com/about#kcolligan" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/50e03b67445a473cd9ac475701105dd2.jpg" alt="" width="100" height="100" class="user-avatar"></a></li><li><a href="https://www.raywenderlich.com/about#" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/rw-logo_250.png" width="100" height="100"></a></li></ul><p>... <a href="https://www.raywenderlich.com/about#abt_tut-ios" sl-processed="1">75 total!</a></p><h2>Android Team</h2><ul><li><a href="https://www.raywenderlich.com/about#asreekumar" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/832a260528bc5594e0b3d00154bfea32.jpg" alt="" width="100" height="100" class="user-avatar"></a></li><li><a href="https://www.raywenderlich.com/about#vgonda" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/2edeb6ac352e7d7ec1fc6587def47042.jpg" alt="" width="100" height="100" class="user-avatar"></a></li><li><a href="https://www.raywenderlich.com/about#pdegand" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/59a5799370516c86007fe5ce214dbba7.jpg" alt="" width="100" height="100" class="user-avatar"></a></li></ul><p>... <a href="https://www.raywenderlich.com/about#abt_tut-android" sl-processed="1">30 total!</a></p><h2>Unity Team</h2><ul><li><a href="https://www.raywenderlich.com/about#mplaczek" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/1ea09789220d27317a459bad2167a1ff.jpg" alt="" width="100" height="100" class="user-avatar"></a></li><li><a href="https://www.raywenderlich.com/about#bbroom" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/72ddd6509156a7dd3c301b87a46c5219.jpg" alt="" width="100" height="100" class="user-avatar"></a></li><li><a href="https://www.raywenderlich.com/about#mberg" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/c6ebf2108413dc332fa890918297b1a7.jpg" alt="" width="100" height="100" class="user-avatar"></a></li></ul><p>... <a href="https://www.raywenderlich.com/about#abt_tut-unity" sl-processed="1">12 total!</a></p><h2>Articles Team</h2><ul><li><a href="https://www.raywenderlich.com/about#gandrews" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/595ba6d842403c58eb6721afb6aaa916" alt="" width="100" height="100" class="user-avatar"></a></li><li><a href="https://www.raywenderlich.com/about#arush" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/db607a44b5404905a328be5b9b5a73fe.jpg" alt="" width="100" height="100" class="user-avatar"></a></li><li><a href="https://www.raywenderlich.com/about#bmorefield" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/37e2116492ac1e65feb7a9ede8a7ebc2.jpg" alt="" width="100" height="100" class="user-avatar"></a></li></ul><p>... <a href="https://www.raywenderlich.com/about#abt_article" sl-processed="1">14 total!</a></p><h2>Resident Authors Team</h2><ul><li><a href="https://www.raywenderlich.com/about#jahmad" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/ce928123d4d98f0e9c76b7582c899b48.jpg" alt="" width="100" height="100" class="user-avatar"></a></li><li><a href="https://www.raywenderlich.com/about#jorlandos" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/a4b51e44c79b32fc840133aaec2f34ff.jpg" alt="" width="100" height="100" class="user-avatar"></a></li><li><a href="https://www.raywenderlich.com/about#sgardner" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/eacfbb9e5bb4a4432bd629a8747f5d78.jpg" alt="" width="100" height="100" class="user-avatar"></a></li></ul><p>... <a href="https://www.raywenderlich.com/about#abt_resident-authors" sl-processed="1">28 total!</a></p><h2>Podcast Team</h2><ul><li><a href="https://www.raywenderlich.com/about#" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/rw-logo_250.png" width="100" height="100"></a></li><li><a href="https://www.raywenderlich.com/about#bdifranceso" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/740d0d3e39262ebd3bdea3ac5d24e3f5.jpg" alt="" width="100" height="100" class="user-avatar"></a></li><li><a href="https://www.raywenderlich.com/about#kmoon" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/c160c8c5224077bcd2379038292f5174.jpg" alt="" width="100" height="100" class="user-avatar"></a></li></ul><p>... <a href="https://www.raywenderlich.com/about#abt_podcast-team" sl-processed="1">7 total!</a></p><h2>Recruitment Team</h2><ul><li><a href="https://www.raywenderlich.com/about#amarlette" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/c7fd95bde4b656c289ca5e6f57d459a4.jpg" alt="" width="100" height="100" class="user-avatar"></a></li><li><a href="https://www.raywenderlich.com/about#sberrevoets" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/f3688cef95ba7506b29feeb1af5093d6" alt="" width="100" height="100" class="user-avatar"></a></li><li><a href="https://www.raywenderlich.com/about#ekerber" sl-processed="1"><img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/d02acb07c90fe0670fc929f8e928ee42.jpg" alt="" width="100" height="100" class="user-avatar"></a></li></ul><p>... <a href="https://www.raywenderlich.com/about#abt_recruitment-team" sl-processed="1">9 total!</a></p>		</div>
+	</section>
+</section>
+</div>
+</div><div id="fb-root" class=" fb_reset"><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/lY4eZXm_YWu.html" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div>
+		<footer id="main-footer">
+      <div class="block">    
+        <div class="top-row">
+          <a href="https://www.raywenderlich.com/" class="logo-mark" aria-label="Home" sl-processed="1"></a>
+          <ul class="footer-nav">
+            <li><a href="https://www.raywenderlich.com/104320/open-call-for-writers-and-editors" sl-processed="1">Write For Us</a></li>
+            <li><a href="http://rwdevcon.com/" sl-processed="1">RWDevCon</a></li>
+            <li><a href="https://store.raywenderlich.com/faq" sl-processed="1">FAQ</a></li>
+            <li><a href="https://www.raywenderlich.com/advertise" sl-processed="1">Advertise</a></li>
+            <li><a href="https://www.raywenderlich.com/contact" sl-processed="1">Contact</a></li>
+          </ul>
+          <ul class="social-media-links">
+            <li><a href="https://www.facebook.com/raywenderlich" aria-label="Follow us on facebook" sl-processed="1"><i class="icon-facebook-icon" aria-hidden="true"></i><span>12k+ Facebook likes</span></a></li>
+            <li><a href="https://twitter.com/rwenderlich" aria-label="Follow us on Twitter" sl-processed="1"><i class="icon-twitter-icon" aria-hidden="true"></i><span>57k+ Twitter followers</span></a></li>
+          </ul>
+        </div>
+
+        <div class="middle-row">
+          <div class="col screencast-col">
+            <div class="img-holder">
+            	<img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/subscribe-footer@2x.png" alt="">
+            </div>  
+            <div class="content-holder">
+              <span>Screencasts &amp; Video Tutorials</span>
+              <a class="no-link">Join over 4,000 subscribers!</a>
+              <p>Keep your Swift &amp; iOS skills up-to-date via hands-on tutorials — in video form! The largest collection of Swift &amp; iOS video tutorials anywhere.</p>
+              <a class="cta-to-subscribe" href="https://store.raywenderlich.com/products/subscription" sl-processed="1">Learn more</a>
+            </div>
+          </div>
+          <div class="col newsletter-col">
+            <div class="img-holder">
+            	<img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/image-rwweekly@2x.png" alt="Ray Wenderlich Weekly Development Newsletter">
+            </div>
+            <div class="content-holder">
+            <span>Join 70,000+ Developers</span>
+                <a>raywenderlich.com weekly</a>
+                <p>Sign up to receive the latest tutorials from raywenderlich.com each week, and receive a free epic-length tutorial as a bonus!</p>
+                <form action="https://raywenderlich.us1.list-manage.com/subscribe/post?u=1bc8e630b1599df629818e59b&amp;id=83b6edc87f" method="post" class="newsletter-signup-footer validate" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate="">
+                <input type="email" id="mce-EMAIL" name="EMAIL" placeholder="EMAIL">
+                <button type="submit">Sign up</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="gearbox">
+        <div class="block">
+          <div id="left-gears">
+            <img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/gear_small.svg" class="clockwise-motion small-gear gears" id="gear1" alt="">
+            <img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/gear_medium.svg" class="counter-clockwise-motion  medium-gear gears" id="gear2" alt="">
+            <img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/gear_large.svg" class="clockwise-motion large-gear gears" id="gear3" alt="">
+            <img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/gear_medium.svg" class="counter-clockwise-motion medium-gear gears" id="gear4" alt="">
+          </div>
+
+          <ul class="footer-small-links">
+            <li style="margin:0">
+              <a href="https://help.raywenderlich.com/privacy" target="_blank" style="font-size:15px;opacity: 1;" sl-processed="1"><span>Privacy Policy<i style="margin: 0 9px;">·</i></span></a></li>
+            <li style="margin:0">
+              <a href="https://help.raywenderlich.com/terms-of-service" target="_blank" style="font-size:15px;opacity: 1;" sl-processed="1"><span>Terms of Service<i style="margin: 0 9px;">·</i></span></a>
+            </li>
+            <li style="margin:0">
+              <span style="font-size: 15px;">© 2017 Razeware LLC.</span>
+            </li>
+          </ul>
+
+          <div id="right-gears">
+            <img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/gear_small.svg" class="clockwise-motion small-gear gears" id="gear5" alt="">
+            <img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/gear_medium.svg" class="counter-clockwise-motion  medium-gear gears" id="gear6" alt="">
+            <img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/gear_large.svg" class="clockwise-motion large-gear gears" id="gear7" alt="">
+            <img src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/gear_medium.svg" class="counter-clockwise-motion medium-gear gears" id="gear8" alt="">
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!--
+
+                                               _           _ _      _     
+                                              | |         | (_)    | |    
+      _ __ __ _ _   _  __      _____ _ __   __| | ___ _ __| |_  ___| |__  
+     | '__/ _` | | | | \ \ /\ / / _ \ '_ \ / _` |/ _ \ '__| | |/ __| '_ \ 
+     | | | (_| | |_| |  \ V  V /  __/ | | | (_| |  __/ |  | | | (__| | | |
+     |_|  \__,_|\__, |   \_/\_/ \___|_| |_|\__,_|\___|_|  |_|_|\___|_| |_|
+                 __/ |                                                    
+                |___/                                                     
+
+    -->
+
+		<script type="text/javascript" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/widgets.js"></script>
+<script type="text/javascript" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/highlight.pack.js"></script>
+<script type="text/javascript" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/code_highlighting.js"></script>
+<script type="text/javascript" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/countdown.js"></script>
+<script type="text/javascript" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/wp-embed.min.js"></script>
+		
+		<script type="text/javascript">var _merchantSettings=_merchantSettings || [];_merchantSettings.push(['AT', '11ld4k']);(function(){var autolink=document.createElement('script');autolink.type='text/javascript';autolink.async=true; autolink.src='https://autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(autolink, s);})();</script>
+		<script>
+			if (jQuery.browser.msie) { jQuery("html").addClass("msie"); }
+			if (typeof window.chrome === "object") { jQuery("html").addClass("chrome"); }
+		</script>
+	
+
+
+<div class="swiftype-widget"><div class="autocomplete" style="position: absolute; z-index: 9999; top: 430px; left: 0px; width: 98px; display: none;"><ul></ul></div></div><div id="onesignal-bell-container" class="onesignal-bell-container onesignal-reset onesignal-bell-container-bottom-right"><div id="onesignal-bell-launcher" class="onesignal-bell-launcher onesignal-bell-launcher-md onesignal-bell-launcher-bottom-right onesignal-bell-launcher-theme-default onesignal-bell-launcher-active"><div class="onesignal-bell-launcher-button"><svg class="onesignal-bell-svg" xmlns="http://www.w3.org/2000/svg" width="99.7" height="99.7" viewBox="0 0 99.7 99.7" style="filter: drop-shadow(0 2px 4px rgba(34,36,38,0.35));; -webkit-filter: drop-shadow(0 2px 4px rgba(34,36,38,0.35));;"><circle class="background" cx="49.9" cy="49.9" r="49.9" style="fill: rgb(0, 104, 55);"></circle><path class="foreground" d="M50.1 66.2H27.7s-2-.2-2-2.1c0-1.9 1.7-2 1.7-2s6.7-3.2 6.7-5.5S33 52.7 33 43.3s6-16.6 13.2-16.6c0 0 1-2.4 3.9-2.4 2.8 0 3.8 2.4 3.8 2.4 7.2 0 13.2 7.2 13.2 16.6s-1 11-1 13.3c0 2.3 6.7 5.5 6.7 5.5s1.7.1 1.7 2c0 1.8-2.1 2.1-2.1 2.1H50.1zm-7.2 2.3h14.5s-1 6.3-7.2 6.3-7.3-6.3-7.3-6.3z" style=""></path><ellipse class="stroke" cx="49.9" cy="49.9" rx="37.4" ry="36.9" style=""></ellipse></svg></div><div class="onesignal-bell-launcher-badge" style="filter: drop-shadow(0 2px 4px rgba(34,36,38,0));; -webkit-filter: drop-shadow(0 2px 4px rgba(34,36,38,0));;"></div><div class="onesignal-bell-launcher-message"><div class="onesignal-bell-launcher-message-body"></div></div><div class="onesignal-bell-launcher-dialog" style="filter: drop-shadow(0px 2px 2px rgba(34,36,38,.15));; -webkit-filter: drop-shadow(0px 2px 2px rgba(34,36,38,.15));;"><div class="onesignal-bell-launcher-dialog-body"></div></div></div></div><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" title="Twitter analytics iframe" src="./How To Make A Swipeable Table View Cell With Actions – Without Going Nuts With Scroll Views_files/saved_resource.html"></iframe></body></html>
