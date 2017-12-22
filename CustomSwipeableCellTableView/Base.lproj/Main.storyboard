@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CustomSwipeableCellTableView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cid-hQ-bfI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="61" id="s4v-Mg-GQu" customClass="SwipeableTableViewCell" customModule="CustomSwipeableCellTableView" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="61"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="s4v-Mg-GQu" id="zJp-sy-D62">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ssL-Z6-KAi">
+                                                    <rect key="frame" x="189" y="0.0" width="93" height="61"/>
+                                                    <color key="backgroundColor" red="0.46708049759999998" green="1" blue="0.073859322500000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="93" id="fUg-gb-Jxp"/>
+                                                    </constraints>
+                                                    <inset key="titleEdgeInsets" minX="17" minY="31" maxX="0.0" maxY="0.0"/>
+                                                    <inset key="imageEdgeInsets" minX="39" minY="10" maxX="7" maxY="0.0"/>
+                                                    <state key="normal" title="Edit" image="pencil">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="buttonClicked:" destination="s4v-Mg-GQu" eventType="touchUpInside" id="LMT-7V-dZa"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uWp-FJ-3vW">
+                                                    <rect key="frame" x="282" y="0.0" width="93" height="60.5"/>
+                                                    <color key="backgroundColor" red="1" green="0.25809364369999999" blue="0.3266606662" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="93" id="z9F-lt-HAP"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <inset key="contentEdgeInsets" minX="3" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    <inset key="titleEdgeInsets" minX="3" minY="31" maxX="13" maxY="0.0"/>
+                                                    <inset key="imageEdgeInsets" minX="33" minY="11" maxX="0.0" maxY="0.0"/>
+                                                    <state key="normal" title="Delete" image="Messaging-Trash-icon">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="buttonClicked:" destination="s4v-Mg-GQu" eventType="touchUpInside" id="cJP-Qu-WIj"/>
+                                                    </connections>
+                                                </button>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WDQ-Lg-y1c">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TmT-Ov-Qwq">
+                                                            <rect key="frame" x="8" y="8" width="359" height="45"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstItem="TmT-Ov-Qwq" firstAttribute="top" secondItem="WDQ-Lg-y1c" secondAttribute="top" constant="8" id="3wF-yo-h82"/>
+                                                        <constraint firstItem="TmT-Ov-Qwq" firstAttribute="leading" secondItem="WDQ-Lg-y1c" secondAttribute="leading" constant="8" id="Lg6-6j-YMR"/>
+                                                        <constraint firstAttribute="bottom" secondItem="TmT-Ov-Qwq" secondAttribute="bottom" constant="8" id="XnC-fy-hwn"/>
+                                                        <constraint firstAttribute="trailing" secondItem="TmT-Ov-Qwq" secondAttribute="trailing" constant="8" id="gHL-bd-kmt"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="uWp-FJ-3vW" firstAttribute="leading" secondItem="ssL-Z6-KAi" secondAttribute="trailing" id="9eo-2N-jYz"/>
+                                                <constraint firstItem="WDQ-Lg-y1c" firstAttribute="leading" secondItem="zJp-sy-D62" secondAttribute="leading" id="H3Q-S9-qV1"/>
+                                                <constraint firstItem="WDQ-Lg-y1c" firstAttribute="top" secondItem="zJp-sy-D62" secondAttribute="top" id="HS1-H3-mjY"/>
+                                                <constraint firstAttribute="bottom" secondItem="uWp-FJ-3vW" secondAttribute="bottom" id="Hq7-DO-SVZ"/>
+                                                <constraint firstItem="ssL-Z6-KAi" firstAttribute="top" secondItem="zJp-sy-D62" secondAttribute="top" id="SDX-5F-gPu"/>
+                                                <constraint firstAttribute="trailing" secondItem="uWp-FJ-3vW" secondAttribute="trailing" id="Yxt-Iy-b9O"/>
+                                                <constraint firstAttribute="bottom" secondItem="WDQ-Lg-y1c" secondAttribute="bottom" id="ZAe-UR-U8t"/>
+                                                <constraint firstAttribute="bottom" secondItem="ssL-Z6-KAi" secondAttribute="bottom" id="cYv-cQ-iJW"/>
+                                                <constraint firstAttribute="trailing" secondItem="WDQ-Lg-y1c" secondAttribute="trailing" id="seM-L8-hl7"/>
+                                                <constraint firstItem="uWp-FJ-3vW" firstAttribute="top" secondItem="zJp-sy-D62" secondAttribute="top" id="zZC-fo-ANN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="btnDelete" destination="uWp-FJ-3vW" id="kQx-rr-Bfz"/>
+                                            <outlet property="btnEdit" destination="ssL-Z6-KAi" id="4WM-4i-hqF"/>
+                                            <outlet property="contentViewLeftConstraint" destination="H3Q-S9-qV1" id="tob-LC-joi"/>
+                                            <outlet property="contentViewRightConstraint" destination="seM-L8-hl7" id="ynJ-mb-Pyb"/>
+                                            <outlet property="lblTitle" destination="TmT-Ov-Qwq" id="0Ud-Zu-cMp"/>
+                                            <outlet property="myContentView" destination="WDQ-Lg-y1c" id="sRS-7D-Rno"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ZY8-HQ-i1i"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="mA2-q9-dCH"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Cid-hQ-bfI" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Ved-Jy-bPD"/>
+                            <constraint firstItem="Cid-hQ-bfI" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="bKn-oI-rkX"/>
+                            <constraint firstItem="Cid-hQ-bfI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="gx3-Fm-AEi"/>
+                            <constraint firstItem="Cid-hQ-bfI" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="qvJ-6E-Wf3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="Cid-hQ-bfI" id="SIm-na-9sM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="130.88455772113943"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Messaging-Trash-icon" width="15" height="15"/>
+        <image name="pencil" width="15" height="15"/>
+    </resources>
+</document>
